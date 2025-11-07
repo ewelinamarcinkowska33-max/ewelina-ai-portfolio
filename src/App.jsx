@@ -307,21 +307,49 @@ function PortfolioSection() {
         <p className="text-gray-600 mb-6">Zestaw eksperymentów, kolaży i testów promptów — pokażemy tu proces twórczy i różne wariacje tworzone z AI.</p>
         <div className="grid md:grid-cols-3 gap-6">
           <article className="bg-white rounded-2xl shadow overflow-hidden">
-            <img src="/images/collage1.jpg" alt="collage" className="w-full h-64 object-cover" />
+            <img src="/images/collage1.png" alt="collage" className="w-full h-64 object-cover" />
+            <div className="p-4">
+              <h4 className="font-semibold">Creative Collage</h4>
+              <p className="text-sm text-gray-600 mt-2">Kompozycje tworzone w Affinity Designer z elementami generatywnymi.</p>
+            </div>
+          </article>
+           <article className="bg-white rounded-2xl shadow overflow-hidden">
+            <img src="/images/collage2.png" alt="collage" className="w-full h-64 object-cover" />
+            <div className="p-4">
+              <h4 className="font-semibold">Creative Collage</h4>
+              <p className="text-sm text-gray-600 mt-2">Kompozycje tworzone w Affinity Designer z elementami generatywnymi.</p>
+            </div>
+          </article>
+           <article className="bg-white rounded-2xl shadow overflow-hidden">
+            <img src="/images/collage3.png" alt="collage" className="w-full h-64 object-cover" />
+            <div className="p-4">
+              <h4 className="font-semibold">Creative Collage</h4>
+              <p className="text-sm text-gray-600 mt-2">Kompozycje tworzone w Affinity Designer z elementami generatywnymi.</p>
+            </div>
+          </article>
+           <article className="bg-white rounded-2xl shadow overflow-hidden">
+            <img src="/images/collage4.png" alt="collage" className="w-full h-64 object-cover" />
+            <div className="p-4">
+              <h4 className="font-semibold">Creative Collage</h4>
+              <p className="text-sm text-gray-600 mt-2">Kompozycje tworzone w Affinity Designer z elementami generatywnymi.</p>
+            </div>
+          </article>
+           <article className="bg-white rounded-2xl shadow overflow-hidden">
+            <img src="/images/collage5.png" alt="collage" className="w-full h-64 object-cover" />
             <div className="p-4">
               <h4 className="font-semibold">Creative Collage</h4>
               <p className="text-sm text-gray-600 mt-2">Kompozycje tworzone w Affinity Designer z elementami generatywnymi.</p>
             </div>
           </article>
           <article className="bg-white rounded-2xl shadow overflow-hidden">
-            <img src="/images/collage2.jpg" alt="collage2" className="w-full h-64 object-cover" />
+            <img src="/images/collage6.png" alt="collage2" className="w-full h-64 object-cover" />
             <div className="p-4">
               <h4 className="font-semibold">Experimental Portraits</h4>
               <p className="text-sm text-gray-600 mt-2">Testy postaci i stylów — od fotorealizmu po artystyczne glitche.</p>
             </div>
           </article>
           <article className="bg-white rounded-2xl shadow overflow-hidden">
-            <img src="/images/collage3.jpg" alt="collage3" className="w-full h-64 object-cover" />
+            <img src="/images/collage7.png" alt="collage3" className="w-full h-64 object-cover" />
             <div className="p-4">
               <h4 className="font-semibold">Product Details</h4>
               <p className="text-sm text-gray-600 mt-2">Detale tkanin i akcesoriów — gotowe do sklepowych mockupów.</p>
