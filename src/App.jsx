@@ -195,8 +195,8 @@ function CvSection() {
 function AideasCaseStudy() {
   const [open, setOpen] = useState(false)
   const posterImage = '/images/aideas-poster.jpg'
-  const videoSrc = '' // paste public video URL
-  const audioSrc = '' // paste public audio URL
+  const videoSrc = 'https://drive.google.com/file/d/1A1pgw7DGwZWpbtOoiJ4ab3dKcJarCXJk/view?usp=sharing'
+  const audioSrc = 'https://drive.google.com/file/d/1240TDIQ_PpepWgXCS2sp52Ccy2eY-b0a/view?usp=sharing'
 
   return (
     <section id="portfolio" className="py-16 px-6 md:px-20 bg-white">
@@ -350,7 +350,7 @@ function Contact() {
           </div>
         </form>
         <div className="mt-8 flex items-center gap-4 text-sm text-gray-600">
-          <Mail className="w-5 h-5" /> <span>contact@your-domain.com</span>
+          <Mail className="w-5 h-5" /> <span>ewelina.marcinkowska@outlook.com</span>
           <a className="flex items-center gap-2 ml-6" href="#"><Linkedin className="w-4 h-4" />LinkedIn</a>
           <a className="flex items-center gap-2" href="#"><Github className="w-4 h-4" />Behance / Instagram</a>
         </div>
