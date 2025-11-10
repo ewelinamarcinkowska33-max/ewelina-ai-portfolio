@@ -93,23 +93,21 @@ function Hero() {
         </motion.div>
 
         {/* Zdjęcie Hero */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20, scale: 0.98 }} 
-          whileInView={{ opacity: 1, y: 0, scale: 1 }} 
-          viewport={{ once: true, amount: 0.3 }} 
-          transition={{ duration: 0.8 }} 
-          className="relative flex justify-center md:justify-end"
-        >
-<div className="shadow-2xl border border-gray-100 rounded-full overflow-hidden w-72 h-72">
+<motion.div 
+  initial={{ opacity: 0, y: 20, scale: 0.98 }} 
+  whileInView={{ opacity: 1, y: 0, scale: 1 }} 
+  viewport={{ once: true, amount: 0.3 }} 
+  transition={{ duration: 0.8 }} 
+  className="flex justify-center md:justify-end"
+>
+<div className="w-72 h-72 rounded-full overflow-hidden shadow-2xl border border-gray-100">
   <img 
     src="/images/hero-placeholder.jpg" 
     alt="Ewelina" 
     className="w-full h-full object-cover" 
   />
 </div>
-
         </motion.div>
-
       </div>
     </section>
   );
