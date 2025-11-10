@@ -64,13 +64,13 @@ function Hero() {
     <section className="relative overflow-hidden bg-gradient-to-b from-[#F9F8F6] to-white">
       <div className="max-w-6xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-8 items-center">
         <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }}>
-          <h1 className="text-4xl md:text-5xl font-serif font-bold leading-tight">Cześć — jestem Ewelina</h1>
+          <h1 className="text-4xl md:text-5xl font-serif font-bold leading-tight">Cześć — mam na imię Ewelina</h1>
           <p className="mt-4 text-lg text-gray-700 max-w-xl">Jestem wysoko zmotywowaną specjalistką z 5-letnim doświadczeniem w tworzeniu cyfrowych treści multimedialnych. Łączę sztukę, technologię i emocje w wizualnych historiach tworzonych z pomocą AI.</p>
           <div className="mt-6 flex gap-4">
             <a href="#portfolio" className="px-5 py-3 bg-[#2E2E2E] text-white rounded-md">Zobacz portfolio</a>
             <a href="#contact" className="px-5 py-3 border border-gray-200 rounded-md">Kontakt</a>
           </div>
-          <div className="mt-6 text-sm text-gray-500">Stack: Gemini Imagen • Hailuo AI • Stable Audio • Affinity Designer</div>
+          <div className="mt-6 text-sm text-gray-500">Stack: Gemini Imagen • Hailuo AI • Stable Audio • Runway • Affinity Designer</div>
         </motion.div>
         <motion.div initial={{ opacity: 0, scale: 0.98 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.7 }} className="relative">
           <div className="rounded-2xl overflow-hidden shadow-2xl border border-gray-100">
