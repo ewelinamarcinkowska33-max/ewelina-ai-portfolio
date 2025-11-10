@@ -77,7 +77,7 @@ function Hero() {
             Cześć, nazywam się Ewelina
           </h1>
           <p className="mt-4 text-lg text-gray-700 max-w-xl">
-            Łączę psychologię i edukację z cyfrowymi projektami. Tworzę wizualne historie i rozwiązania angażujące ludzi.
+            Jestem wysoko zmotywowaną specjalistką z 5-letnim doświadczeniem w tworzeniu cyfrowych treści multimedialnych. Łączę sztukę, technologię i emocje w wizualnych historiach tworzonych z pomocą AI.
           </p>
           <div className="mt-6 flex gap-4 flex-wrap">
             <a href="#portfolio" className="px-5 py-3 bg-[#2E2E2E] text-white rounded-md">
@@ -100,13 +100,14 @@ function Hero() {
           transition={{ duration: 0.8 }} 
           className="relative flex justify-center md:justify-end"
         >
-          <div className="shadow-2xl border border-gray-100 rounded-full overflow-hidden w-72 h-72">
-            <img 
-              src="/images/hero-placeholder.jpg" 
-              alt="Ewelina" 
-              className="w-full h-full object-cover" 
-            />
-          </div>
+<div className="shadow-2xl border border-gray-100 rounded-full overflow-hidden w-72 h-72">
+  <img 
+    src="/images/hero-placeholder.jpg" 
+    alt="Ewelina" 
+    className="w-full h-full object-cover" 
+  />
+</div>
+
         </motion.div>
 
       </div>
