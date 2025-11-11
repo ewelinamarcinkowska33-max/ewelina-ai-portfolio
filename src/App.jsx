@@ -214,70 +214,159 @@ function CvSection() {
 
 /* AideasCaseStudy */
 function AideasCaseStudy() {
-  const [open, setOpen] = useState(false)
-  const posterImage = '/images/aideas-poster.jpg'
-  const videoSrc = 'https://drive.google.com/file/d/1A1pgw7DGwZWpbtOoiJ4ab3dKcJarCXJk/view?usp=sharing'
-  const audioSrc = 'https://drive.google.com/file/d/1240TDIQ_PpepWgXCS2sp52Ccy2eY-b0a/view?usp=sharing'
+  const [modalContent, setModalContent] = React.useState(null);
+
+  const openModal = (type) => {
+    let content;
+    if (type === "image") {
+      content = (
+        <img
+          src="/images/pirat.jpg"
+          alt="AI Image"
+          className="max-w-full rounded"
+        />
+      );
+    } else if (type === "video") {
+      content = (
+        <video controls className="max-w-full rounded">
+          <source src="/videos/pirat_video.mp4" type="video/mp4" />
+        </video>
+      );
+    } else if (type === "audio") {
+      content = (
+        <audio controls className="w-full">
+          <source src="/audio/audio_stable.mp3" type="audio/mpeg" />
+        </audio>
+      );
+    }
+    setModalContent(content);
+  };
+
+  const closeModal = () => setModalContent(null);
+
+  const posterImage = '/images/pirat.jpg';
 
   return (
     <section id="portfolio" className="py-16 px-6 md:px-20 bg-white">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-serif mb-6">AI Case Study #1 — Sailing with AI</h2>
-        <div className="grid md:grid-cols-2 gap-8 items-center">
+        <div className="grid md:grid-cols-2 gap-8 items-start">
           <div>
-            <p className="text-gray-700 mb-4">Projekt stworzony w ramach szkolenia AIDEAS — od obrazu do video i dźwięku. Narzędzia: Gemini 2.5 (Canvas), Hailuo AI, Stable Audio.</p>
-            <details className="bg-gray-50 p-4 rounded">
-              <summary className="font-medium">Prompty & proces</summary>
-              <div className="mt-3 text-sm text-gray-700 space-y-2">
-                <div><strong>Image prompt (EN):</strong> Create a realistic photograph showing three friends sailing on a Masurian lake on a sunny day...</div>
-                <div><strong>Video prompt (EN):</strong> A cinematic 6-second video of a white Antila 33 sailboat on a sunny Masurian lake...</div>
-                <div><strong>Audio prompt (EN):</strong> Comical Epic Orchestral Miniature, Majestic and Exaggeratedly Lighthearted...</div>
+            <p className="text-gray-700 mb-4">
+              Projekt stworzony w ramach eksperymentu AI — od obrazu do wideo i dźwięku. Narzędzia: Gemini 2.5 (Canvas), Hailuo AI, Stable Audio.
+            </p>
+
+            {/* Prompty w detalach */}
+            <details className="bg-gray-50 p-4 rounded mb-3">
+              <summary className="cursor-pointer font-medium">Image prompt (EN)</summary>
+              <div className="mt-2 text-sm text-gray-700 whitespace-pre-line overflow-y-auto max-h-40">
+Create a realistic photograph depicting three friends sailing on a Masurian lake on a sunny day.
+Subject: The main element of the photo is a white Antila 33 sailboat, leaning on the waves. The white sails are taut in the wind, conveying a clear sense of motion and dynamics.
+Characters: At the stern of the Antila 33, at the helm, sits the skipper – a man around 35 years old, wearing a captain’s outfit: white shirt, black trousers, captain’s hat. He is smiling and confidently holding the wheel. The helm is located at the stern, at the back of the boat.
+Next to him on the stern sits a woman (25–30 years old), smiling, dressed in an outfit inspired by Pirates of the Caribbean.
+At the bow of the sailboat stands a man around 30 years old, dressed as Jack Sparrow: wearing a hat, hair ornaments, and pirate attire. He waves his hat, laughing, and looking toward the horizon, holding onto the mast with one hand.
+Faces are clear, natural, and free of shadows.
+Environment: In the background, the blue water of the Masurian lake is visible, along with green, forested shores and a bright sky with light clouds. Sunlight reflections can be seen on the water surface.
+Mood: Adventure, togetherness, freedom, adrenaline. Realistic lighting, rich colors, high quality (print-ready).
+Style: Photorealistic, wide-angle shot, highly detailed, horizontal orientation.
+Equipment: Shot with a 35mm lens. 
               </div>
             </details>
-            <div className="mt-6 flex gap-3 items-center">
-              <button onClick={() => setOpen(true)} className="px-4 py-2 bg-[#D4AF37] text-white rounded">Odtwórz video + audio</button>
-              <a href="#" className="text-sm underline text-gray-600">Zobacz obraz (Drive)</a>
+
+            <details className="bg-gray-50 p-4 rounded mb-3">
+              <summary className="cursor-pointer font-medium">Video prompt (EN)</summary>
+              <div className="mt-2 text-sm text-gray-700 whitespace-pre-line overflow-y-auto max-h-40">
+A cinematic 6-second video of a white Antila 33 sailboat on a sunny Masurian lake. The sails slowly unfold, billowing dynamically in the wind, revealing a glowing inscription “AIDEAS” across their surface. The camera performs a smooth orbit shot, circling half around the sailboat, showing the sunlight reflecting off the water and the motion of the sails. On the bow, the Jack Sparrow character laughs, waves his hat playfully toward the horizon, and jumps into the water. The scene ends with the camera pulling slightly back and upward, revealing the sparkling lake surface and the full sailboat with the AIDEAS logo visible. Realistic 4K cinematic lighting, bright colors, strong wind effects, atmosphere of adventure and creative freedom. Horizontal format, wide-angle lens.              </div>
+            </details>
+
+            <details className="bg-gray-50 p-4 rounded mb-6">
+              <summary className="cursor-pointer font-medium">Audio prompt (EN)</summary>
+              <div className="mt-2 text-sm text-gray-700 whitespace-pre-line overflow-y-auto max-h-40">
+Comical Epic Orchestral Miniature, Majestic and Exaggeratedly Lighthearted, evoking an absurd inland sailing adventure. The core features a spirited, playful main melody carried by a bright acoustic accordion and a prominent folk tin whistle, supported by a small-scale, deliberately over-the-top cinematic orchestra (featuring soaring strings, gentle brass accents). The rhythm is a consistent, simplified shanty-like marching beat. Crucially, subtle yet cheerful male 'ho ho ho' vocalizations are layered in the background, adding to the jovial atmosphere. The overall mood is sunny, ironic, grandly simple, and filled with good-natured cheer. The final two seconds smoothly transition into a gentle, slightly muffled 'plop' sound effect, like an anchor being dropped into calm lake.              </div>
+            </details>
+
+            {/* Przyciski do mediów */}
+            <div className="flex flex-col sm:flex-row gap-3 items-center">
+              <button
+                onClick={() => openModal("image")}
+                className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+              >
+                <img
+                  src="/images/pirat.jpg"
+                  alt="miniatura"
+                  className="w-8 h-8 object-cover rounded"
+                />
+                Zobacz obraz
+              </button>
+
+              <button
+                onClick={() => openModal("video")}
+                className="flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-6.518-3.757A1 1 0 007 8.243v7.514a1 1 0 001.234.97l6.518-1.879a1 1 0 00.75-.97v-3.7a1 1 0 00-.75-.97z" />
+                </svg>
+                Zobacz wideo
+              </button>
+
+              <button
+                onClick={() => openModal("audio")}
+                className="flex items-center gap-2 px-4 py-2 bg-purple-600 text-white rounded hover:bg-purple-700 transition"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19V6l12-2v15H9z" />
+                </svg>
+                Odtwórz audio
+              </button>
             </div>
           </div>
+
+          {/* Poster image */}
           <div>
             <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-100">
-              <img src={posterImage} alt="AIDEAS poster" className="w-full h-72 object-cover" />
+              <img src={posterImage} alt="AI poster" className="w-full h-72 object-cover" />
             </div>
           </div>
         </div>
       </div>
 
-      {open && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-6">
-          <div className="absolute inset-0 bg-black/60" onClick={() => setOpen(false)} />
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="relative bg-white rounded-2xl max-w-3xl w-full overflow-hidden shadow-2xl">
-            <div className="p-3 border-b flex items-center justify-between">
-              <div className="font-medium">Sailing with AI — player</div>
-              <button onClick={() => setOpen(false)} className="text-sm text-gray-500">Zamknij ✕</button>
-            </div>
-            <div className="bg-black">
-              {videoSrc ? (
-                <video controls autoPlay className="w-full h-auto">
-                  <source src={videoSrc} type="video/mp4" />
-                </video>
-              ) : (
-                <div className="w-full h-64 flex items-center justify-center text-white">Wklej publiczny URL video, żeby odtwarzać</div>
-              )}
-              {audioSrc ? (
-                <div className="p-3">
-                  <audio controls className="w-full">
-                    <source src={audioSrc} type="audio/mpeg" />
-                  </audio>
-                </div>
-              ) : null}
-              <div className="p-3 text-xs text-gray-500">Tools: Gemini 2.5 • Hailuo AI • Stable Audio</div>
-            </div>
-          </motion.div>
+      {/* Modal */}
+      {modalContent && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-6"
+          onClick={closeModal}
+        >
+          <div className="absolute inset-0 bg-black/60" />
+          <div
+            className="relative bg-white rounded-2xl max-w-3xl w-full overflow-hidden shadow-2xl p-4"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={closeModal}
+              className="absolute top-2 right-2 text-red-600 font-bold px-2 py-1 rounded hover:bg-red-100 transition"
+            >
+              Zamknij ✕
+            </button>
+            <div>{modalContent}</div>
+          </div>
         </div>
       )}
     </section>
-  )
+  );
 }
+
 
 /* WinterGlowCase */
 function WinterGlowCase() {
