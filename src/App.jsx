@@ -343,30 +343,31 @@ Comical Epic Orchestral Miniature, Majestic and Exaggeratedly Lighthearted, evok
       </div>
 
       {/* Modal */}
-      {modalContent && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-6"
-          onClick={closeModal}
-        >
-          <div className="absolute inset-0 bg-black/60" />
-          <div
-            className="relative bg-white rounded-2xl max-w-3xl w-full overflow-hidden shadow-2xl p-4"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              onClick={closeModal}
-              className="absolute top-2 right-2 text-red-600 font-bold px-2 py-1 rounded hover:bg-red-100 transition"
-            >
-              Zamknij ✕
-            </button>
-            <div>{modalContent}</div>
-          </div>
-        </div>
-      )}
-    </section>
-  );
-}
+     {modalContent && (
+  <div
+    className="fixed inset-0 z-50 flex items-center justify-center p-6"
+    onClick={closeModal}
+  >
+    <div className="absolute inset-0 bg-black/60" />
+    <div
+      className="relative bg-white rounded-2xl max-w-3xl w-full overflow-hidden shadow-2xl p-4"
+      onClick={(e) => e.stopPropagation()}
+    >
+      {/* przycisk absolutnie */}
+      <button
+        onClick={closeModal}
+        className="absolute top-3 right-3 z-50 text-red-600 font-bold px-2 py-1 rounded hover:bg-red-100 transition"
+      >
+        Zamknij ✕
+      </button>
 
+      {/* zawartość modala */}
+      <div className="relative z-0">
+        {modalContent}
+      </div>
+    </div>
+  </div>
+)}
 
 /* WinterGlowCase */
 function WinterGlowCase() {
