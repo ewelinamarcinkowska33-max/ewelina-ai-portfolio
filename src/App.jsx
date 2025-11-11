@@ -130,9 +130,11 @@ function CvSection() {
                 <h4 className="font-semibold">E-learning Content Editor | Learnetic SA</h4>
                 <p className="text-sm text-gray-600">Gdańsk | 07.2020 – obecnie</p>
                 <ul className="list-disc list-inside mt-3 text-sm text-gray-700 space-y-1">
-                  <li>Tworzenie technologii i rozwiązań wspierających edukację: platformy, narzędzia, interaktywne materiały.</li>
-                  <li>Integracja narzędzi AI (ElevenLabs, Gemini Imagen) do generowania multimedialnych zasobów.</li>
-                  <li>Samodzielna edycja grafiki i audio (Affinity Designer, GIMP, Audacity).</li>
+                  <li>Tworzenie technologii i rozwiązań wspierających edukację, w tym platform, narzędzi do tworzenia zasobów i interaktywnych materiałów.</li>
+                  <li>Integracja narzędzi AI do generowania multimedialnych zasobów.</li>
+                  <li>Opracowywanie autorskich, interaktywnych koncepcji ekranów, gier i kart pracy dla dzieci i młodzieży.</li>
+                  <li>Współpraca z redaktorami, autorami i zespołem grafików w celu realizacji spójnej i wysokiej jakości wizji projektu.</li>
+                  <li>Samodzielna edycja i modyfikacja grafik (Affinity Designer, GIMP) oraz obróbka plików dźwiękowych (Audacity) na potrzeby projektów, gwarantując wysoki standard wizualny i estetyczny materiałów</li>
                 </ul>
               </div>
               <div>
@@ -140,8 +142,8 @@ function CvSection() {
                 <p className="text-sm text-gray-600">Gdynia | 04.2017 – 03.2020</p>
                 <ul className="list-disc list-inside mt-3 text-sm text-gray-700 space-y-1">
                   <li>Zarządzanie zespołem, rekrutacja i wdrażanie pracowników.</li>
-                  <li>Kontrola zamówień i nadzór nad finansami.</li>
-                  <li>Wprowadzanie działań zwiększających sprzedaż.</li>
+                  <li>Kontrola zamówień, nadzór nad przebiegiem transakcji i okresową inwentaryzacją.</li>
+                  <li>Wprowadzanie działań zwiększających sprzedaż,w tym tworzenie nowych zestawów produktowych oraz zarządzanie cenami w odpowiedzi na bieżące trendy rynkowe.</li>
                 </ul>
               </div>
             </div>
@@ -200,7 +202,7 @@ function CvSection() {
             </div>
             <ul className="list-disc list-inside text-sm text-gray-700">
               <li>AIDEAS — szkolenie z wykorzystania zaawansowanych narzędzi AI</li>
-              <li>Umiejętności Jutra 2.0 — Google &amp; SGH</li>
+              <li>Umiejętności Jutra 2.0 — Google &amp; SGH - rozwinięcie kompetencji w obszarze nowoczesnych technologii i transformacji cyfrowej.</li>
             </ul>
           </div>
 
