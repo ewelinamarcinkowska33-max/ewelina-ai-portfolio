@@ -58,85 +58,57 @@ function Navbar() {
   )
 }
 
-/* Hero */
-import { motion } from "framer-motion";
-
-function Hero() {
-  return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-[#F9F8F6] to-white">
-      <div className="max-w-6xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-8 items-center">
-
-        {/* Tekst Hero */}
-        <motion.div 
-          initial={{ opacity: 0, x: -40 }} 
-          whileInView={{ opacity: 1, x: 0 }} 
-          viewport={{ once: true, amount: 0.3 }} 
-          transition={{ duration: 0.8 }}
-        >
-          <h1 className="text-4xl md:text-5xl font-serif font-bold leading-tight">
-            Cześć, nazywam się Ewelina
-          </h1>
-          <p className="mt-4 text-lg text-gray-700 max-w-xl">
-            Jestem wysoko zmotywowaną specjalistką z 5-letnim doświadczeniem w tworzeniu cyfrowych treści multimedialnych. Łączę sztukę, technologię i emocje w wizualnych historiach tworzonych z pomocą AI.
-          </p>
-          <div className="mt-6 flex gap-4 flex-wrap">
-            <a href="#portfolio" className="px-5 py-3 bg-[#2E2E2E] text-white rounded-md">
-              Zobacz portfolio
-            </a>
-            <a href="#contact" className="px-5 py-3 border border-gray-200 rounded-md">
-              Kontakt
-            </a>
-          </div>
-          <div className="mt-6 text-sm text-gray-500">
-            Stack: Gemini Imagen • Hailuo AI • Stable Audio • Runway • Affinity Designer
-          </div>
-        </motion.div>
-
-        {/* Zdjęcie Hero */}
-<motion.div 
-  initial={{ opacity: 0, y: 20, scale: 0.98 }} 
-  whileInView={{ opacity: 1, y: 0, scale: 1 }} 
-  viewport={{ once: true, amount: 0.3 }} 
-  transition={{ duration: 0.8 }} 
-  className="flex justify-center md:justify-end"
->
-<div className="w-72 h-72 rounded-full overflow-hidden shadow-2xl border border-gray-100">
-  <img 
-    src="/images/hero-placeholder.jpg" 
-    alt="Ewelina" 
-    className="w-full h-full object-cover" 
-  />
-</div>
-        </motion.div>
-      </div>
-    </section>
-  );
-}
-
-export default Hero;
-
 /* AboutSection */
 function AboutSection() {
   return (
     <section id="about" className="py-20 px-6 md:px-20 bg-[#EFE9E1]">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="flex justify-center">
+        
+        {/* Lewa kolumna: zdjęcie */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="flex justify-center"
+        >
           <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-2xl overflow-hidden shadow-xl">
-            <img src="/images/your-photo-ai.jpg" alt="portrait" className="w-full h-full object-cover" />
+            <img
+              src="/images/ewelina.jpg"  /* <-- wstaw tu swoją nazwę pliku */
+              alt="Ewelina"
+              className="w-full h-full object-cover"
+            />
           </div>
         </motion.div>
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
-          <h2 className="text-3xl md:text-4xl font-serif mb-3">Your Name</h2>
-          <h3 className="text-sm uppercase tracking-widest text-gray-600 mb-6">AI Visual Creator</h3>
-          <p className="text-lg leading-relaxed mb-4">Jestem wysoko zmotywowaną specjalistką z 5-letnim doświadczeniem w tworzeniu cyfrowych treści multimedialnych. Z zaciekawieniem eksploruję możliwości generatywnej sztucznej inteligencji – od grafiki i wideo po dźwięk.</p>
-          <p className="text-lg leading-relaxed mb-4">Posiadam praktyczne doświadczenie w narzędziach AI, takich jak <strong>Gemini Imagen</strong>, <strong>DALL-E</strong> i <strong>ElevenLabs</strong> oraz biegłość w zaawansowanym Prompt Engineeringu. Jako Magister Psychologii, wnoszę unikalne połączenie zmysłu estetycznego, kreatywności i głębokiego zrozumienia ludzkiej percepcji.</p>
-          <blockquote className="border-l-4 border-gray-400 pl-4 italic text-gray-700 mb-6">"Każdy nowy projekt zaczynam od ciekawości – to ona prowadzi mnie do najlepszych pomysłów."</blockquote>
-          <p className="text-lg"><strong>Prywatnie:</strong> podróże na wyspy, skutery wodne, latte art oraz wymyślanie edukacyjnych kart pracy i interaktywnych gier dla dzieci.</p>
+
+        {/* Prawa kolumna: tekst */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+        >
+          <h2 className="text-3xl md:text-4xl font-serif mb-6">Cześć — mam na imię Ewelina</h2>
+          
+          {/* usunięto <h3> z AI Visual Creator */}
+          
+          <p className="text-lg leading-relaxed mb-4">
+            Jestem wysoko zmotywowaną specjalistką z 5-letnim doświadczeniem w tworzeniu cyfrowych treści multimedialnych. Z zaciekawieniem eksploruję możliwości generatywnej sztucznej inteligencji – od grafiki i wideo po dźwięk.
+          </p>
+          <p className="text-lg leading-relaxed mb-4">
+            Posiadam praktyczne doświadczenie w narzędziach AI, takich jak <strong>Gemini Imagen</strong>, <strong>DALL-E</strong> i <strong>ElevenLabs</strong> oraz biegłość w zaawansowanym Prompt Engineeringu. Jako Magister Psychologii, wnoszę unikalne połączenie zmysłu estetycznego, kreatywności i głębokiego zrozumienia ludzkiej percepcji.
+          </p>
+          <blockquote className="border-l-4 border-gray-400 pl-4 italic text-gray-700 mb-6">
+            Każdy nowy projekt zaczynam od ciekawości – to ona prowadzi mnie do najlepszych pomysłów.
+          </blockquote>
+          <p className="text-lg">
+            <strong>Prywatnie:</strong> podróże na wyspy, skutery wodne, latte art oraz wymyślanie edukacyjnych kart pracy i interaktywnych gier dla dzieci.
+          </p>
         </motion.div>
+
       </div>
     </section>
-  )
+  );
 }
+
 
 /* CvSection */
 function CvSection() {
