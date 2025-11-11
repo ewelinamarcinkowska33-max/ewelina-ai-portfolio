@@ -84,7 +84,7 @@ function AboutSection() {
           transition={{ duration: 0.7 }}
         >
           <h2 className="text-3xl md:text-4xl font-serif mb-6">
-            Cześć — mam na imię Ewelina
+            Cześć! Mam na imię Ewelina.
           </h2>
 
           <p className="text-lg leading-relaxed mb-4">
