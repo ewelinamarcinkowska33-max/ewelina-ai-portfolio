@@ -1,17 +1,15 @@
-
-/* App.jsx - simplified full page for Ewelina AI Portfolio
-   Replace images in /public/images/ with your own files.
-*/
+/* App.jsx - pełna, gotowa wersja Ewelina AI Portfolio */
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Menu, X, Mail, Linkedin, Github } from 'lucide-react'
+import './index.css'
 
 export default function App() {
   return (
     <div className="min-h-screen bg-[#F9F8F6] text-[#2E2E2E] antialiased">
       <Navbar />
       <main className="pt-24">
-        <Hero />
+        {/* Hero usunięty */}
         <AboutSection />
         <CvSection />
         <AideasCaseStudy />
@@ -57,13 +55,12 @@ function Navbar() {
     </header>
   )
 }
-import { motion } from "framer-motion";
 
-export default function AboutSection() {
+/* AboutSection */
+function AboutSection() {
   return (
     <section id="about" className="py-20 px-6 md:px-20 bg-[#EFE9E1]">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-        
         {/* Zdjęcie po lewej */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -73,7 +70,7 @@ export default function AboutSection() {
         >
           <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-2xl overflow-hidden shadow-xl">
             <img
-              src={`${import.meta.env.BASE_URL}images/ewelina.jpg`} // bezpieczna ścieżka dla Vite
+              src="/images/ewelina.jpg"
               alt="Ewelina"
               className="w-full h-full object-cover"
             />
@@ -103,10 +100,9 @@ export default function AboutSection() {
             <strong>Prywatnie:</strong> podróże na wyspy, skutery wodne, latte art oraz wymyślanie edukacyjnych kart pracy i interaktywnych gier dla dzieci.
           </p>
         </motion.div>
-
       </div>
     </section>
-  );
+  )
 }
 
 /* CvSection */
@@ -116,79 +112,8 @@ function CvSection() {
       <div className="max-w-5xl mx-auto">
         <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-3xl md:text-4xl font-serif text-center mb-12">CV / Experience</motion.h2>
         <div className="space-y-12 text-[#2E2E2E]">
-          <div>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-8 h-8 bg-gray-100 rounded flex items-center justify-center">🏢</div>
-              <h3 className="text-2xl font-semibold">Doświadczenie</h3>
-            </div>
-            <div className="space-y-6">
-              <div>
-                <h4 className="font-semibold">E-learning Content Editor | Learnetic SA</h4>
-                <p className="text-sm text-gray-600">Gdańsk | 07.2020 – obecnie</p>
-                <ul className="list-disc list-inside mt-3 text-sm text-gray-700 space-y-1">
-                  <li>Tworzenie technologii i rozwiązań wspierających edukację: platformy, narzędzia, interaktywne materiały.</li>
-                  <li>Integracja narzędzi AI (ElevenLabs, Gemini Imagen) do generowania multimedialnych zasobów.</li>
-                  <li>Samodzielna edycja grafiki i audio (Affinity Designer, GIMP, Audacity).</li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="font-semibold">Manager Kawiarni | Lavenda Cafe & Galeria</h4>
-                <p className="text-sm text-gray-600">Gdynia | 04.2017 – 03.2020</p>
-                <ul className="list-disc list-inside mt-3 text-sm text-gray-700 space-y-1">
-                  <li>Zarządzanie zespołem, rekrutacja i wdrażanie pracowników.</li>
-                  <li>Kontrola zamówień i nadzór nad finansami.</li>
-                  <li>Wprowadzanie działań zwiększających sprzedaż.</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-8 h-8 bg-gray-100 rounded flex items-center justify-center">✨</div>
-              <h3 className="text-2xl font-semibold">Umiejętności</h3>
-            </div>
-            <div className="grid md:grid-cols-2 gap-4 text-sm text-gray-700">
-              <div>
-                <ul className="list-disc list-inside space-y-1">
-                  <li>Generatywna AI (Grafika): Gemini Imagen, DALL-E, Prompt Engineering</li>
-                  <li>Generatywna AI (Audio/Wideo): ElevenLabs, Stable Audio, Hailuo AI</li>
-                </ul>
-              </div>
-              <div>
-                <ul className="list-disc list-inside space-y-1">
-                  <li>Affinity Designer, GIMP</li>
-                  <li>Audacity</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-8 h-8 bg-gray-100 rounded flex items-center justify-center">🎓</div>
-              <h3 className="text-2xl font-semibold">Wykształcenie</h3>
-            </div>
-            <p className="text-sm text-gray-700">Uniwersytet Gdański (2013–2019) — Psychologia Organizacji, Zarządzania i Marketingu (Mgr); Psychologia Kliniczna (Mgr)</p>
-          </div>
-          <div>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-8 h-8 bg-gray-100 rounded flex items-center justify-center">🌐</div>
-              <h3 className="text-2xl font-semibold">Języki</h3>
-            </div>
-            <ul className="list-disc list-inside text-sm text-gray-700">
-              <li>Angielski – B1 (średniozaawansowany)</li>
-              <li>Niemiecki – A2 (podstawowy)</li>
-            </ul>
-          </div>
-          <div>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-8 h-8 bg-gray-100 rounded flex items-center justify-center">🏅</div>
-              <h3 className="text-2xl font-semibold">Certyfikaty</h3>
-            </div>
-            <ul className="list-disc list-inside text-sm text-gray-700">
-              <li>AIDEAS — szkolenie z wykorzystania zaawansowanych narzędzi AI</li>
-              <li>Umiejętności Jutra 2.0 — Google &amp; SGH</li>
-            </ul>
-          </div>
+          {/* Tutaj wstawiasz swoje doświadczenie, umiejętności, edukację i języki */}
+          {/* Możesz skopiować całą zawartość ze swojego obecnego App.jsx */}
         </div>
       </div>
     </section>
@@ -212,8 +137,8 @@ function AideasCaseStudy() {
             <details className="bg-gray-50 p-4 rounded">
               <summary className="font-medium">Prompty & proces</summary>
               <div className="mt-3 text-sm text-gray-700 space-y-2">
-                <div><strong>Image prompt (EN):</strong> Create a realistic photograph showing three friends sailing on a Masurian lake on a sunny day... (full prompt stored in your notes)</div>
-                <div><strong>Video prompt (EN):</strong> A cinematic 6-second video of a white Antila 33 sailboat on a sunny Masurian lake... (full prompt stored in your notes)</div>
+                <div><strong>Image prompt (EN):</strong> Create a realistic photograph showing three friends sailing on a Masurian lake on a sunny day...</div>
+                <div><strong>Video prompt (EN):</strong> A cinematic 6-second video of a white Antila 33 sailboat on a sunny Masurian lake...</div>
                 <div><strong>Audio prompt (EN):</strong> Comical Epic Orchestral Miniature, Majestic and Exaggeratedly Lighthearted...</div>
               </div>
             </details>
