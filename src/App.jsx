@@ -235,7 +235,7 @@ function AideasCaseStudy() {
     } else if (type === "audio") {
       content = (
         <audio controls className="w-full">
-          <source src="/audio/audio_stable.mp3" type="audio/mpeg" />
+          <source src="/audios/audio_stable.mp3" type="audio/mpeg" />
         </audio>
       );
     }
