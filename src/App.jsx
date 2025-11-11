@@ -57,14 +57,14 @@ function Navbar() {
     </header>
   )
 }
+import { motion } from "framer-motion";
 
-/* AboutSection */
-function AboutSection() {
+export default function AboutSection() {
   return (
     <section id="about" className="py-20 px-6 md:px-20 bg-[#EFE9E1]">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
         
-        {/* Lewa kolumna: zdjęcie */}
+        {/* Zdjęcie po lewej */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -73,23 +73,23 @@ function AboutSection() {
         >
           <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-2xl overflow-hidden shadow-xl">
             <img
-              src="/images/ewelina.jpg"  /* <-- wstaw tu swoją nazwę pliku */
+              src={`${import.meta.env.BASE_URL}images/ewelina.jpg`} // bezpieczna ścieżka dla Vite
               alt="Ewelina"
               className="w-full h-full object-cover"
             />
           </div>
         </motion.div>
 
-        {/* Prawa kolumna: tekst */}
+        {/* Tekst po prawej */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
         >
-          <h2 className="text-3xl md:text-4xl font-serif mb-6">Cześć — mam na imię Ewelina</h2>
-          
-          {/* usunięto <h3> z AI Visual Creator */}
-          
+          <h2 className="text-3xl md:text-4xl font-serif mb-6">
+            Cześć — mam na imię Ewelina
+          </h2>
+
           <p className="text-lg leading-relaxed mb-4">
             Jestem wysoko zmotywowaną specjalistką z 5-letnim doświadczeniem w tworzeniu cyfrowych treści multimedialnych. Z zaciekawieniem eksploruję możliwości generatywnej sztucznej inteligencji – od grafiki i wideo po dźwięk.
           </p>
@@ -97,7 +97,7 @@ function AboutSection() {
             Posiadam praktyczne doświadczenie w narzędziach AI, takich jak <strong>Gemini Imagen</strong>, <strong>DALL-E</strong> i <strong>ElevenLabs</strong> oraz biegłość w zaawansowanym Prompt Engineeringu. Jako Magister Psychologii, wnoszę unikalne połączenie zmysłu estetycznego, kreatywności i głębokiego zrozumienia ludzkiej percepcji.
           </p>
           <blockquote className="border-l-4 border-gray-400 pl-4 italic text-gray-700 mb-6">
-            Każdy nowy projekt zaczynam od ciekawości – to ona prowadzi mnie do najlepszych pomysłów.
+            "Każdy nowy projekt zaczynam od ciekawości – to ona prowadzi mnie do najlepszych pomysłów."
           </blockquote>
           <p className="text-lg">
             <strong>Prywatnie:</strong> podróże na wyspy, skutery wodne, latte art oraz wymyślanie edukacyjnych kart pracy i interaktywnych gier dla dzieci.
@@ -108,7 +108,6 @@ function AboutSection() {
     </section>
   );
 }
-
 
 /* CvSection */
 function CvSection() {
