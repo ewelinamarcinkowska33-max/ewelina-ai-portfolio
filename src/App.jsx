@@ -94,7 +94,7 @@ function AboutSection() {
             Posiadam praktyczne doświadczenie w narzędziach AI, takich jak <strong>Gemini Imagen</strong>, <strong>DALL-E</strong> i <strong>ElevenLabs</strong> oraz biegłość w zaawansowanym Prompt Engineeringu. Jako Magister Psychologii, wnoszę unikalne połączenie zmysłu estetycznego, kreatywności i głębokiego zrozumienia ludzkiej percepcji.
           </p>
           <blockquote className="border-l-4 border-gray-400 pl-4 italic text-gray-700 mb-6">
-            "Każdy nowy projekt zaczynam od ciekawości – to ona prowadzi mnie do najlepszych pomysłów."
+            Każdy nowy projekt zaczynam od ciekawości – to ona prowadzi mnie do najlepszych pomysłów.
           </blockquote>
           <p className="text-lg">
             <strong>Prywatnie:</strong> podróże na wyspy, skutery wodne, latte art oraz wymyślanie edukacyjnych kart pracy i interaktywnych gier dla dzieci.
@@ -105,20 +105,117 @@ function AboutSection() {
   )
 }
 
-/* CvSection */
+import { motion } from 'framer-motion';
+
 function CvSection() {
   return (
     <section id="cv" className="py-20 px-6 md:px-20 bg-white">
       <div className="max-w-5xl mx-auto">
-        <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-3xl md:text-4xl font-serif text-center mb-12">CV / Experience</motion.h2>
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-3xl md:text-4xl font-serif text-center mb-12"
+        >
+          CV / Experience
+        </motion.h2>
+
         <div className="space-y-12 text-[#2E2E2E]">
-          {/* Tutaj wstawiasz swoje doświadczenie, umiejętności, edukację i języki */}
-          {/* Możesz skopiować całą zawartość ze swojego obecnego App.jsx */}
+
+          {/* Doświadczenie */}
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-8 h-8 bg-gray-100 rounded flex items-center justify-center">🏢</div>
+              <h3 className="text-2xl font-semibold">Doświadczenie</h3>
+            </div>
+            <div className="space-y-6">
+              <div>
+                <h4 className="font-semibold">E-learning Content Editor | Learnetic SA</h4>
+                <p className="text-sm text-gray-600">Gdańsk | 07.2020 – obecnie</p>
+                <ul className="list-disc list-inside mt-3 text-sm text-gray-700 space-y-1">
+                  <li>Tworzenie technologii i rozwiązań wspierających edukację: platformy, narzędzia, interaktywne materiały.</li>
+                  <li>Integracja narzędzi AI (ElevenLabs, Gemini Imagen) do generowania multimedialnych zasobów.</li>
+                  <li>Samodzielna edycja grafiki i audio (Affinity Designer, GIMP, Audacity).</li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="font-semibold">Manager Kawiarni | Lavenda Cafe & Galeria</h4>
+                <p className="text-sm text-gray-600">Gdynia | 04.2017 – 03.2020</p>
+                <ul className="list-disc list-inside mt-3 text-sm text-gray-700 space-y-1">
+                  <li>Zarządzanie zespołem, rekrutacja i wdrażanie pracowników.</li>
+                  <li>Kontrola zamówień i nadzór nad finansami.</li>
+                  <li>Wprowadzanie działań zwiększających sprzedaż.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Umiejętności */}
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-8 h-8 bg-gray-100 rounded flex items-center justify-center">✨</div>
+              <h3 className="text-2xl font-semibold">Umiejętności</h3>
+            </div>
+            <div className="grid md:grid-cols-2 gap-4 text-sm text-gray-700">
+              <div>
+                <ul className="list-disc list-inside space-y-1">
+                  <li>Generatywna AI (Grafika): Gemini Imagen, DALL-E, Prompt Engineering</li>
+                  <li>Generatywna AI (Audio/Wideo): ElevenLabs, Stable Audio, Hailuo AI</li>
+                </ul>
+              </div>
+              <div>
+                <ul className="list-disc list-inside space-y-1">
+                  <li>Affinity Designer, GIMP</li>
+                  <li>Audacity</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Wykształcenie */}
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-8 h-8 bg-gray-100 rounded flex items-center justify-center">🎓</div>
+              <h3 className="text-2xl font-semibold">Wykształcenie</h3>
+            </div>
+            <p className="text-sm text-gray-700">
+              Uniwersytet Gdański (2013–2019) — Psychologia Organizacji, Zarządzania i Marketingu (Mgr); Psychologia Kliniczna (Mgr)
+            </p>
+          </div>
+
+          {/* Języki */}
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-8 h-8 bg-gray-100 rounded flex items-center justify-center">🌐</div>
+              <h3 className="text-2xl font-semibold">Języki</h3>
+            </div>
+            <ul className="list-disc list-inside text-sm text-gray-700">
+              <li>Angielski – B1 (średniozaawansowany)</li>
+              <li>Niemiecki – A2 (podstawowy)</li>
+            </ul>
+          </div>
+
+          {/* Certyfikaty */}
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-8 h-8 bg-gray-100 rounded flex items-center justify-center">🏅</div>
+              <h3 className="text-2xl font-semibold">Certyfikaty</h3>
+            </div>
+            <ul className="list-disc list-inside text-sm text-gray-700">
+              <li>AIDEAS — szkolenie z wykorzystania zaawansowanych narzędzi AI</li>
+              <li>Umiejętności Jutra 2.0 — Google &amp; SGH</li>
+            </ul>
+          </div>
+
         </div>
       </div>
     </section>
-  )
+  );
 }
+
+export default CvSection;
+
 
 /* AideasCaseStudy */
 function AideasCaseStudy() {
