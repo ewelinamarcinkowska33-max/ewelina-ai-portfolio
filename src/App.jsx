@@ -9,7 +9,6 @@ export default function App() {
     <div className="min-h-screen bg-[#F9F8F6] text-[#2E2E2E] antialiased">
       <Navbar />
       <main className="pt-24">
-        {/* Hero usunięty */}
         <AboutSection />
         <CvSection />
         <AideasCaseStudy />
@@ -105,8 +104,7 @@ function AboutSection() {
   )
 }
 
-import { motion } from 'framer-motion';
-
+/* CvSection */
 function CvSection() {
   return (
     <section id="cv" className="py-20 px-6 md:px-20 bg-white">
@@ -119,7 +117,6 @@ function CvSection() {
         >
           CV / Experience
         </motion.h2>
-
         <div className="space-y-12 text-[#2E2E2E]">
 
           {/* Doświadczenie */}
@@ -138,7 +135,6 @@ function CvSection() {
                   <li>Samodzielna edycja grafiki i audio (Affinity Designer, GIMP, Audacity).</li>
                 </ul>
               </div>
-
               <div>
                 <h4 className="font-semibold">Manager Kawiarni | Lavenda Cafe & Galeria</h4>
                 <p className="text-sm text-gray-600">Gdynia | 04.2017 – 03.2020</p>
@@ -211,11 +207,8 @@ function CvSection() {
         </div>
       </div>
     </section>
-  );
+  )
 }
-
-export default CvSection;
-
 
 /* AideasCaseStudy */
 function AideasCaseStudy() {
