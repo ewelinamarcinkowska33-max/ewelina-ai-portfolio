@@ -20,6 +20,7 @@ export default function App() {
   )
 }
 
+
 /* Navbar */
 function Navbar() {
   const [open, setOpen] = useState(false)
