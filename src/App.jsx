@@ -12,7 +12,6 @@ export default function App() {
         <AboutSection />
         <CvSection />
         <AideasCaseStudy />
-        <WinterGlowCase />
         <PortfolioSection />
         <Contact />
       </main>
@@ -368,99 +367,6 @@ Comical Epic Orchestral Miniature, Majestic and Exaggeratedly Lighthearted, evok
     </div>
   </div>
 )}
-
-import React from "react";
-function WinterGlowCase() {
-  const [open, setOpen] = React.useState(false);
-
-  const projects = [
-    { 
-      title: 'Gold Elegance', 
-      image: '/images/winterglow-1.png', 
-      description: 'Złoto i ciepło w najczystszej formie.' 
-    },
-    { 
-      title: 'Velvet Night Look', 
-      image: '/images/winterglow-2.png', 
-      description: 'Zimowy wieczór w aksamicie i blasku.' 
-    },
-    { 
-      title: 'Matching Moments', 
-      image: '/images/winterglow-3.png', 
-      description: 'Ciepło zaczyna się od drobnych gestów.' 
-    },
-  ];
-
-  return (
-    <section className="py-16 px-6 md:px-20 bg-gradient-to-b from-white via-gray-50 to-rose-50">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
-          <span className="text-amber-500 font-semibold">✦</span>
-          Winter Glow — AI Holiday Fashion Campaign
-        </h2>
-
-        <p className="text-gray-600 max-w-3xl mb-8">
-          Mini kampania inspirowana świątecznym ciepłem i estetyką LPP. 
-          Fotorealistyczne stylizacje, zmysłowe detale i emocje uchwycone w języku AI.
-        </p>
-
-        <div className="grid md:grid-cols-3 gap-6">
-          {projects.map((p, i) => (
-            <div key={i} className="bg-white rounded-2xl shadow hover:scale-105 transition overflow-hidden">
-              <img src={p.image} alt={p.title} className="w-full h-64 object-cover" />
-              <div className="p-4">
-                <h3 className="font-semibold">{p.title}</h3>
-                <p className="text-sm text-gray-600 italic mt-2">{p.description}</p>
-              </div>
-            </div>
-          ))}
-
-          {/* Kafelek z video */}
-          <div 
-            onClick={() => setOpen(true)}
-            className="relative cursor-pointer bg-black rounded-2xl shadow overflow-hidden hover:scale-105 transition group"
-          >
-            <img 
-              src="/images/winterglow-video-poster.jpg" 
-              alt="Winter Glow Video" 
-              className="w-full h-64 object-cover opacity-80 group-hover:opacity-60 transition" 
-            />
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-12 h-12 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-5.197-3.03A1 1 0 008 9.03v5.94a1 1 0 001.555.832l5.197-3.03a1 1 0 000-1.664z" />
-              </svg>
-              <span className="text-sm font-semibold tracking-wide">Zobacz video</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Modal video */}
-      {open && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-6">
-          <div className="absolute inset-0 bg-black/60" onClick={() => setOpen(false)} />
-          <div className="relative bg-white rounded-2xl max-w-3xl w-full overflow-hidden shadow-2xl">
-            <div className="p-3 border-b flex items-center justify-between bg-white sticky top-0 z-10">
-              <div className="font-medium">Winter Glow — Video</div>
-              <button 
-                onClick={() => setOpen(false)} 
-                className="text-sm text-gray-500 hover:text-gray-700 absolute top-3 right-4 z-20"
-              >
-                Zamknij ✕
-              </button>
-            </div>
-            <div className="bg-black">
-              <video controls autoPlay className="w-full h-auto rounded-b-2xl">
-                <source src="/videos/winter_glow_video.mp4" type="video/mp4" />
-                Twoja przeglądarka nie obsługuje odtwarzania wideo.
-              </video>
-            </div>
-          </div>
-        </div>
-      )}
-    </section>
-  );
-}
 
 /* PortfolioSection */
 function PortfolioSection() {
