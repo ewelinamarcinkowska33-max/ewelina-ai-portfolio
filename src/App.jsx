@@ -371,13 +371,32 @@ Comical Epic Orchestral Miniature, Majestic and Exaggeratedly Lighthearted, evok
 
 /* WinterGlowCase */
 function WinterGlowCase() {
+  const [open, setOpen] = React.useState(false)
+
   const projects = [
-    { title: 'Golden Knit Elegance', image: '/images/winterglow-1.png', prompt: 'A realistic winter fashion photo...', description: 'Złoto i ciepło w najczystszej formie.', tools: ['Gemini Imagen', 'AI Canvas'] },
-    { title: 'Velvet Night Look', image: '/images/winterglow-2.png', prompt: 'Fashion campaign photo...', description: 'Zimowy wieczór w aksamicie i blasku.', tools: ['Gemini Imagen', 'DALL·E 3'] },
-    { title: 'Matching Moments', image: '/images/winterglow-3.png', prompt: 'A cozy Christmas morning scene...', description: 'Ciepło zaczyna się od drobnych gestów.', tools: ['Gemini Imagen', 'DALL·E 3'] },
-    { title: 'Winter Editorial — Street Chic', image: '/images/winterglow-5.jpg', prompt: 'Fashion editorial photo of a young woman...', description: 'Zimowy chłód w kontraście do miejskiego ciepła.', tools: ['Gemini Imagen', 'Ideogram'] },
-    { title: 'Textures of Winter', image: '/images/winterglow-6.jpg', prompt: 'Artistic flat-lay collage combining textures...', description: 'Miękkość tkanin, połysk metalu, dotyk światła.', tools: ['Gemini Canvas', 'Leonardo AI'] }
+    { 
+      title: 'Gold Elegance', 
+      image: '/images/winterglow-1.png', 
+      prompt: 'A festive winter fashion photo shoot indoors, featuring a minimalist Christmas setting: a white room with subtle golden decor, christmas tree, candles, and soft fairy lights. The model wears a shimmering gold satin dress and holds a cup of coffee. Cozy yet elegant atmosphere, magazine-style composition.', 
+      description: 'Złoto i ciepło w najczystszej formie.', 
+      tools: ['Gemini Imagen', 'AI Canvas'] 
+    },
+    { 
+      title: 'Velvet Night Look', 
+      image: '/images/winterglow-2.png', 
+      prompt: 'A high-end fashion photo of a female model standing in softly falling snow. She wears a beige oversized wool coat, a white turtleneck, and silver accessories. The background is blurred city lights and gentle snowflakes. Cinematic lighting, editorial photography, 85mm lens, warm tones, soft bokeh.', 
+      description: 'Zimowy wieczór w aksamicie i blasku.', 
+      tools: ['Gemini Imagen', 'DALL·E 3'] 
+    },
+    { 
+      title: 'Matching Moments', 
+      image: '/images/winterglow-3.png', 
+      prompt: 'A realistic photo inside a cozy Christmas room. A man and a woman in matching festive pajamas smile and exchange a beautifully wrapped present near a glowing Christmas tree. Realistic lighting, festive, emotional style.', 
+      description: 'Ciepło zaczyna się od drobnych gestów.', 
+      tools: ['Gemini Imagen', 'DALL·E 3'] 
+    },
   ]
+
   return (
     <section className="py-16 px-6 md:px-20 bg-gradient-to-b from-white via-gray-50 to-rose-50">
       <div className="max-w-6xl mx-auto">
@@ -385,26 +404,77 @@ function WinterGlowCase() {
           <div className="text-amber-500 font-semibold">✦</div>
           <h2 className="text-3xl font-bold">Winter Glow — AI Holiday Fashion Campaign</h2>
         </div>
-        <p className="text-gray-600 max-w-3xl mb-8">Mini kampania inspirowana świątecznym ciepłem i estetyką LPP. Fotorealistyczne stylizacje, zmysłowe detale i emocje uchwycone w języku AI.</p>
+
+        <p className="text-gray-600 max-w-3xl mb-8">
+          Mini kampania inspirowana świątecznym ciepłem i estetyką LPP. 
+          Fotorealistyczne stylizacje, zmysłowe detale i emocje uchwycone w języku AI.
+        </p>
+
         <div className="grid md:grid-cols-3 gap-6">
+          {/* 3 obrazy */}
           {projects.map((p, i) => (
-            <motion.article key={i} whileHover={{ scale: 1.02 }} className="bg-white rounded-2xl shadow p-0 overflow-hidden">
+            <motion.article 
+              key={i} 
+              whileHover={{ scale: 1.02 }} 
+              className="bg-white rounded-2xl shadow p-0 overflow-hidden"
+            >
               <img src={p.image} alt={p.title} className="w-full h-64 object-cover" />
               <div className="p-4">
                 <h3 className="font-semibold">{p.title}</h3>
                 <p className="text-sm text-gray-600 italic mt-2">{p.description}</p>
                 <details className="mt-3 bg-gray-100 p-3 rounded text-sm">
                   <summary className="cursor-pointer font-medium">Prompt & tools</summary>
-                  <div className="mt-2 font-mono text-xs text-gray-700">{p.prompt}</div>
-                  <div className="mt-3 flex gap-2">
-                    {p.tools.map((t) => (<span key={t} className="text-xs bg-rose-100 text-rose-700 px-2 py-1 rounded-full">#{t}</span>))}
+                  <div className="mt-2 font-mono text-xs text-gray-700 whitespace-pre-line">{p.prompt}</div>
+                  <div className="mt-3 flex gap-2 flex-wrap">
+                    {p.tools.map((t) => (
+                      <span key={t} className="text-xs bg-rose-100 text-rose-700 px-2 py-1 rounded-full">#{t}</span>
+                    ))}
                   </div>
                 </details>
               </div>
             </motion.article>
           ))}
+
+          {/* Kafelek z video */}
+          <motion.article 
+            whileHover={{ scale: 1.02 }} 
+            onClick={() => setOpen(true)}
+            className="relative cursor-pointer bg-black rounded-2xl shadow overflow-hidden group"
+          >
+            <img src="/images/winterglow-video-poster.jpg" alt="Winter Glow Video" className="w-full h-64 object-cover opacity-80 group-hover:opacity-60 transition" />
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-12 h-12 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-5.197-3.03A1 1 0 008 9.03v5.94a1 1 0 001.555.832l5.197-3.03a1 1 0 000-1.664z" />
+              </svg>
+              <span className="text-sm font-semibold tracking-wide">Zobacz video</span>
+            </div>
+          </motion.article>
         </div>
       </div>
+
+      {/* Modal z video */}
+      {open && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-6">
+          <div className="absolute inset-0 bg-black/60" onClick={() => setOpen(false)} />
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }} 
+            animate={{ opacity: 1, y: 0 }} 
+            className="relative bg-white rounded-2xl max-w-3xl w-full overflow-hidden shadow-2xl"
+          >
+            <div className="p-3 border-b flex items-center justify-between bg-white sticky top-0 z-10">
+              <div className="font-medium">Winter Glow — Video</div>
+              <button onClick={() => setOpen(false)} className="text-sm text-gray-500 hover:text-gray-700">Zamknij ✕</button>
+            </div>
+
+            <div className="bg-black">
+              <video controls autoPlay className="w-full h-auto rounded-b-2xl">
+                <source src="/videos/winter_glow_video.mp4" type="video/mp4" />
+                Twoja przeglądarka nie obsługuje odtwarzania wideo.
+              </video>
+            </div>
+          </motion.div>
+        </div>
+      )}
     </section>
   )
 }
