@@ -12,7 +12,6 @@ export default function App() {
         <AboutSection />
         <CvSection />
         <AideasCaseStudy />
-        <WinterGlowCase />
         <PortfolioSection />
         <Contact />
       </main>
@@ -365,47 +364,6 @@ Comical Epic Orchestral Miniature, Majestic and Exaggeratedly Lighthearted, evok
       )}
     </section>
   );
-}
-
-
-/* WinterGlowCase */
-function WinterGlowCase() {
-  const projects = [
-    { title: 'Golden Knit Elegance', image: '/images/winterglow-1.jpg', prompt: 'A realistic winter fashion photo...', description: 'Złoto i ciepło w najczystszej formie.', tools: ['Gemini Imagen', 'AI Canvas'] },
-    { title: 'Velvet Night Look', image: '/images/winterglow-2.jpg', prompt: 'Fashion campaign photo...', description: 'Zimowy wieczór w aksamicie i blasku.', tools: ['Gemini Imagen', 'DALL·E 3'] },
-    { title: 'Matching Moments', image: '/images/winterglow-4.jpg', prompt: 'A cozy Christmas morning scene...', description: 'Ciepło zaczyna się od drobnych gestów.', tools: ['Gemini Imagen', 'DALL·E 3'] },
-    { title: 'Winter Editorial — Street Chic', image: '/images/winterglow-5.jpg', prompt: 'Fashion editorial photo of a young woman...', description: 'Zimowy chłód w kontraście do miejskiego ciepła.', tools: ['Gemini Imagen', 'Ideogram'] },
-    { title: 'Textures of Winter', image: '/images/winterglow-6.jpg', prompt: 'Artistic flat-lay collage combining textures...', description: 'Miękkość tkanin, połysk metalu, dotyk światła.', tools: ['Gemini Canvas', 'Leonardo AI'] }
-  ]
-  return (
-    <section className="py-16 px-6 md:px-20 bg-gradient-to-b from-white via-gray-50 to-rose-50">
-      <div className="max-w-6xl mx-auto">
-        <div className="flex items-center gap-3 mb-6">
-          <div className="text-amber-500 font-semibold">✦</div>
-          <h2 className="text-3xl font-bold">Winter Glow — AI Holiday Fashion Campaign</h2>
-        </div>
-        <p className="text-gray-600 max-w-3xl mb-8">Mini kampania inspirowana świątecznym ciepłem i estetyką LPP. Fotorealistyczne stylizacje, zmysłowe detale i emocje uchwycone w języku AI.</p>
-        <div className="grid md:grid-cols-3 gap-6">
-          {projects.map((p, i) => (
-            <motion.article key={i} whileHover={{ scale: 1.02 }} className="bg-white rounded-2xl shadow p-0 overflow-hidden">
-              <img src={p.image} alt={p.title} className="w-full h-64 object-cover" />
-              <div className="p-4">
-                <h3 className="font-semibold">{p.title}</h3>
-                <p className="text-sm text-gray-600 italic mt-2">{p.description}</p>
-                <details className="mt-3 bg-gray-100 p-3 rounded text-sm">
-                  <summary className="cursor-pointer font-medium">Prompt & tools</summary>
-                  <div className="mt-2 font-mono text-xs text-gray-700">{p.prompt}</div>
-                  <div className="mt-3 flex gap-2">
-                    {p.tools.map((t) => (<span key={t} className="text-xs bg-rose-100 text-rose-700 px-2 py-1 rounded-full">#{t}</span>))}
-                  </div>
-                </details>
-              </div>
-            </motion.article>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
 }
 
 /* PortfolioSection */
