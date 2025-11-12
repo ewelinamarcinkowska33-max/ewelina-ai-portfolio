@@ -472,7 +472,6 @@ function PortfolioSection() {
             </article>
           ))}
         </div>
-      </div>
 
       {/* Przyciski wideo */}
         <div className="mt-12 flex flex-col md:flex-row items-center justify-center gap-4">
