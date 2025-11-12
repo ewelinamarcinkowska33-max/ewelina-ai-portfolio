@@ -441,7 +441,13 @@ function PortfolioSection() {
         <div className="grid md:grid-cols-3 gap-6">
           {portfolioItems.map((item, index) => (
             <article key={index} className="bg-white rounded-2xl shadow overflow-hidden">
-              <img src={item.imgSrc} alt={item.title} className="w-full h-64 object-cover" />
+              <div className="w-full aspect-square overflow-hidden">
+  <img
+    src={item.imgSrc}
+    alt={item.title}
+    className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+  />
+</div>
               <div className="p-4">
                 <h4 className="font-semibold">{item.title}</h4>
                 <p className="text-sm text-gray-600 mt-2">{item.description}</p>
