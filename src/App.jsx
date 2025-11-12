@@ -264,7 +264,7 @@ Subject: The main element of the photo is a white Antila 33 sailboat, leaning on
 Characters: At the stern of the Antila 33, at the helm, sits the skipper – a man around 35 years old, wearing a captain’s outfit: white shirt, black trousers, captain’s hat. He is smiling and confidently holding the wheel. The helm is located at the stern, at the back of the boat.
 Next to him on the stern sits a woman (25–30 years old), smiling, dressed in an outfit inspired by Pirates of the Caribbean.
 At the bow of the sailboat stands a man around 30 years old, dressed as Jack Sparrow: wearing a hat, hair ornaments, and pirate attire. He waves his hat, laughing, and looking toward the horizon, holding onto the mast with one hand.
-Faces are clear, natural, and free of shadows.
+Faces are clear, natural, and free of shadows. 
 Environment: In the background, the blue water of the Masurian lake is visible, along with green, forested shores and a bright sky with light clouds. Sunlight reflections can be seen on the water surface.
 Mood: Adventure, togetherness, freedom, adrenaline. Realistic lighting, rich colors, high quality (print-ready).
 Style: Photorealistic, wide-angle shot, highly detailed, horizontal orientation.
