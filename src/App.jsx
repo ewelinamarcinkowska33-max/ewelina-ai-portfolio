@@ -528,27 +528,44 @@ function PortfolioSection() {
 function Contact() {
   return (
     <section id="contact" className="py-16 px-6 md:px-20 bg-white">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl font-serif mb-4">Kontakt</h2>
-        <p className="text-gray-600 mb-6">Chcesz omówić projekt lub współpracę? Napisz wiadomość — odpowiem najszybciej jak to możliwe.</p>
-        <form className="grid md:grid-cols-2 gap-4">
-          <input className="p-3 border rounded" placeholder="Imię i nazwisko" />
-          <input className="p-3 border rounded" placeholder="Email" />
-          <textarea className="p-3 border rounded md:col-span-2" placeholder="Wiadomość" rows={6} />
-          <div className="md:col-span-2 flex items-center gap-4">
-            <button type="button" className="px-6 py-3 bg-[#2E2E2E] text-white rounded">Wyślij</button>
-            <small className="text-gray-500">(Formularz działa lokalnie; dodaj backend lub Formspree do wysyłania wiadomości.)</small>
-          </div>
-        </form>
-        <div className="mt-8 flex items-center gap-4 text-sm text-gray-600">
-          <Mail className="w-5 h-5" /> <span>ewelina.marcinkowska@outlook.com</span>
-          <a className="flex items-center gap-2 ml-6" href="#"><Linkedin className="w-4 h-4" />LinkedIn</a>
-          <a className="flex items-center gap-2" href="#"><Github className="w-4 h-4" />Behance / Instagram</a>
+      <div className="max-w-4xl mx-auto text-center">
+        <h2 className="text-3xl md:text-4xl font-serif mb-8">Kontakt</h2>
+        <p className="text-gray-600 mb-10">
+          Chętnie odpowiem na wszelkie pytania dotyczące współpracy lub projektów.
+        </p>
+
+        <div className="flex flex-col md:flex-row justify-center items-center gap-6">
+          {/* Email */}
+          <a
+            href="mailto:ewelina.marcinkowska@outlook.com"
+            className="flex items-center gap-3 px-6 py-3 bg-gray-100 rounded-full hover:bg-gray-200 transition"
+          >
+            📧 <span className="font-medium text-gray-800">ewelina.marcinkowska@outlook.com</span>
+          </a>
+
+          {/* Telefon */}
+          <a
+            href="tel:+48512677769"
+            className="flex items-center gap-3 px-6 py-3 bg-gray-100 rounded-full hover:bg-gray-200 transition"
+          >
+            📞 <span className="font-medium text-gray-800">+48 512 677 769</span>
+          </a>
+
+          {/* LinkedIn */}
+          <a
+            href="https://www.linkedin.com/in/ewelina-marcinkowska-7414a21ab/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 px-6 py-3 bg-gray-100 rounded-full hover:bg-gray-200 transition"
+          >
+            🔗 <span className="font-medium text-gray-800">LinkedIn</span>
+          </a>
         </div>
       </div>
     </section>
   )
 }
+
 
 /* Footer */
 function Footer() {
