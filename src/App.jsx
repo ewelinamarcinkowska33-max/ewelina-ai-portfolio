@@ -370,7 +370,6 @@ Comical Epic Orchestral Miniature, Majestic and Exaggeratedly Lighthearted, evok
 )}
 
 import React from "react";
-
 function WinterGlowCase() {
   const [open, setOpen] = React.useState(false);
 
@@ -462,8 +461,6 @@ function WinterGlowCase() {
     </section>
   );
 }
-
-export default WinterGlowCase;
 
 /* PortfolioSection */
 function PortfolioSection() {
