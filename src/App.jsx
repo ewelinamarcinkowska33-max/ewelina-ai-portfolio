@@ -411,12 +411,10 @@ function WinterGlowCase() {
         </p>
 
         <div className="grid md:grid-cols-3 gap-6">
-          {/* 3 obrazy */}
           {projects.map((p, i) => (
-            <motion.article 
-              key={i} 
-              whileHover={{ scale: 1.02 }} 
-              className="bg-white rounded-2xl shadow p-0 overflow-hidden"
+            <article 
+              key={i}
+              className="bg-white rounded-2xl shadow overflow-hidden transform transition-transform duration-300 hover:scale-105"
             >
               <img src={p.image} alt={p.title} className="w-full h-64 object-cover" />
               <div className="p-4">
@@ -432,14 +430,13 @@ function WinterGlowCase() {
                   </div>
                 </details>
               </div>
-            </motion.article>
+            </article>
           ))}
 
           {/* Kafelek z video */}
-          <motion.article 
-            whileHover={{ scale: 1.02 }} 
+          <article 
             onClick={() => setOpen(true)}
-            className="relative cursor-pointer bg-black rounded-2xl shadow overflow-hidden group"
+            className="relative cursor-pointer bg-black rounded-2xl shadow overflow-hidden group transform transition-transform duration-300 hover:scale-105"
           >
             <img src="/images/winterglow-video-poster.jpg" alt="Winter Glow Video" className="w-full h-64 object-cover opacity-80 group-hover:opacity-60 transition" />
             <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
@@ -448,7 +445,7 @@ function WinterGlowCase() {
               </svg>
               <span className="text-sm font-semibold tracking-wide">Zobacz video</span>
             </div>
-          </motion.article>
+          </article>
         </div>
       </div>
 
@@ -456,14 +453,15 @@ function WinterGlowCase() {
       {open && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-6">
           <div className="absolute inset-0 bg-black/60" onClick={() => setOpen(false)} />
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }} 
-            animate={{ opacity: 1, y: 0 }} 
-            className="relative bg-white rounded-2xl max-w-3xl w-full overflow-hidden shadow-2xl"
-          >
+          <div className="relative bg-white rounded-2xl max-w-3xl w-full overflow-hidden shadow-2xl">
             <div className="p-3 border-b flex items-center justify-between bg-white sticky top-0 z-10">
               <div className="font-medium">Winter Glow — Video</div>
-              <button onClick={() => setOpen(false)} className="text-sm text-gray-500 hover:text-gray-700">Zamknij ✕</button>
+              <button 
+                onClick={() => setOpen(false)} 
+                className="text-sm text-gray-500 hover:text-gray-700 absolute top-3 right-4 z-20"
+              >
+                Zamknij ✕
+              </button>
             </div>
 
             <div className="bg-black">
@@ -472,12 +470,13 @@ function WinterGlowCase() {
                 Twoja przeglądarka nie obsługuje odtwarzania wideo.
               </video>
             </div>
-          </motion.div>
+          </div>
         </div>
       )}
     </section>
   )
 }
+
 
 /* PortfolioSection */
 function PortfolioSection() {
