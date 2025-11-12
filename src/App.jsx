@@ -389,50 +389,42 @@ function PortfolioSection() {
   const portfolioItems = [
     {
       title: "Streetwear",
-      description: "Studio photo of a young male model in trendy streetwear — oversized hoodie, denim, sneakers. Plain white background, flat e-commerce lighting, front view. Outfit clearly visible, natural pose.",
       prompt: `Studio photo of a young male model in trendy streetwear — oversized hoodie, denim, sneakers. Plain white or light grey background, flat e-commerce lighting, front view. Outfit clearly visible, natural pose, realistic texture and color. High-resolution catalog photo, clean and modern.`,
       negativePrompt: `no graffiti, no street background, no blur, no text, no props, no neon colors unless on clothing.`,
       imgSrc: "/images/collage1.png"
     },
     {
       title: "Men’s Fashion",
-      description: "Professional e-commerce photo of a male model in a casual smart outfit — shirt, chinos, or minimalist jacket. White background, uniform lighting, full-body or mid-length framing.",
       prompt: `A professional e-commerce fashion photo of a male model. Model standing naturally, wearing casual smart outfit — shirt, chinos, or minimalist jacket. White seamless background, uniform lighting, full-body or mid-length framing. Clean neutral color palette (grey, navy, beige). Sharp focus on clothing details, modern premium look.`,
       negativePrompt: `no logos, no text, no dramatic lighting, no background, no shadows on wall, no unrealistic body shapes.`,
       imgSrc: "/images/collage2.png"
     },
     {
       title: "Women’s Fashion",
-      description: "Professional studio photo of a female model wearing elegant minimalist clothing. White background, even soft lighting, full-body shot.",
       prompt: `A professional studio photo of a female model wearing elegant minimalist clothing. White seamless background, even soft lighting, full-body shot. Neutral color palette (beige, cream, taupe, black, white). Focus on garment fit, fabric texture, and natural posture. Clean, realistic proportions, subtle shadow under feet only. Premium e-commerce photo, editorial-level quality.`,
       negativePrompt: `no text, no props, no accessories, no hair wind, no background, no blur, no exaggerated expressions.`,
       imgSrc: "/images/collage3.png"
     },
     {
       title: "Soft Babywear Lookbook",
-      description: "Professional horizontal photo for LPP babywear collection. Soft natural light, cozy neutral background, cute babies wearing minimalist clothes.",
       prompt: `A professional horizontal photo for LPP babywear collection. Soft natural light, cozy neutral background (warm beige or off-white). Cute babies and toddlers wearing minimalist, comfortable clothes — cotton, linen, knitwear in soft pastel tones (cream, dusty pink, light grey, sage). Calm, tender atmosphere, natural poses, focus on fabric texture and gentle color harmony. Premium lookbook style, modern Scandinavian minimalism, editorial quality.`,
       negativePrompt: `no text, no logos, no cluttered background, no harsh shadows, no unrealistic proportions, no synthetic colors.`,
       imgSrc: "/images/collage4.png"
     },
     {
       title: "Creative Street Energy",
-      description: "Horizontal youth fashion editorial photo. Young people in trendy streetwear, urban background, dynamic poses.",
       prompt: `A horizontal youth fashion editorial photo. A group of young people in trendy streetwear: oversized hoodies, denim, sneakers, cargo pants. Urban background with graffiti, skatepark or city walls. Natural daylight, dynamic poses, candid energy, creative color grading. Modern Gen Z style, high-quality fashion photography, authentic street vibe.`,
       negativePrompt: `no logos, no text, no blur, no overexposure, no unrealistic faces.`,
       imgSrc: "/images/collage5.png",
-      videoSrc: "/videos/street_energy.mp4" // przycisk wideo
     },
     {
       title: "Monochrome Identity",
-      description: "Fashion photo in a monochrome beige palette. Minimalist outfits, soft lighting, elegant composition.",
       prompt: `Fashion photo in a monochrome beige palette. Models wear different shades of the same color, minimalist outfits with rich textures (wool, silk, linen). Soft lighting, neutral background, focus on fabric structure and silhouette. Elegant, luxurious, calm tone.`,
       negativePrompt: ``,
       imgSrc: "/images/collage6.png"
     },
     {
       title: "Studio Harmony",
-      description: "Professional studio fashion shot. Three models in minimalist clothing, calm, timeless, harmonious look.",
       prompt: `A professional studio fashion shot. Three models styled in minimalist clothing, soft neutral colors (beige, cream, taupe). Simple clean studio background, soft diffused lighting, elegant composition. Calm, timeless, and harmonious look. Premium editorial mood, elegant minimalism aesthetic.`,
       negativePrompt: ``,
       imgSrc: "/images/collage7.png",
