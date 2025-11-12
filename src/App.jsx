@@ -368,6 +368,9 @@ Comical Epic Orchestral Miniature, Majestic and Exaggeratedly Lighthearted, evok
     </div>
   </div>
 )}
+  </>
+  );
+}
 
 /* PortfolioSection */
 function PortfolioSection() {
