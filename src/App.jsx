@@ -434,50 +434,54 @@ function PortfolioSection() {
   return (
     <section className="py-16 px-6 md:px-20 bg-[#F9F8F6]">
       <div className="max-w-6xl mx-auto">
-<div className="text-center md:text-left mb-10">
-  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-    <div>
-      <h2 className="text-3xl md:text-4xl font-serif">Portfolio & Experiments</h2>
-      <p className="text-gray-600 mt-3 max-w-2xl">
-        Zestaw eksperymentów, zdjęć i testów promptów — proces twórczy i różne wariacje tworzone z AI.
-      </p>
-    </div>
-    <div className="flex flex-wrap justify-center md:justify-end gap-4">
-      <button
-        onClick={() => openModal("video", "/videos/winter_video.mp4")}
-        className="relative overflow-hidden px-6 py-3 rounded-full bg-gradient-to-r from-gray-900 via-black to-gray-800 text-white text-sm font-medium shadow-md transition-all duration-300 hover:scale-105 hover:shadow-lg"
-      >
-        <span className="relative z-10">🎬 Zobacz Winter Video AI</span>
-      </button>
 
-      <button
-        onClick={() => openModal("video", "/videos/model_video.mp4")}
-        className="relative overflow-hidden px-6 py-3 rounded-full bg-gradient-to-r from-gray-900 via-gray-800 to-gray-700 text-white text-sm font-medium shadow-md transition-all duration-300 hover:scale-105 hover:shadow-lg"
-      >
-        <span className="relative z-10">💫 Zobacz Fashion Video AI</span>
-      </button>
-    </div>
-  </div>
-</div>
+        {/* Nagłówek */}
+        <div className="mb-8 text-center md:text-left">
+          <h2 className="text-3xl md:text-4xl font-serif">Portfolio & Experiments</h2>
+          <p className="text-gray-600 mt-3 max-w-2xl mx-auto md:mx-0">
+            Zestaw eksperymentów, zdjęć i testów promptów — proces twórczy i różne wariacje tworzone z AI.
+          </p>
+        </div>
+
+        {/* Przyciski wideo nad galerią */}
+        <div className="flex flex-wrap justify-center md:justify-start gap-4 mb-10">
+          <button
+            onClick={() => openModal("video", "/videos/winter_video.mp4")}
+            className="relative overflow-hidden px-6 py-3 rounded-full bg-gradient-to-r from-gray-900 via-black to-gray-800 text-white text-sm font-medium shadow-md transition-all duration-300 hover:scale-105 hover:shadow-lg"
+          >
+            🎬 Zobacz Winter Video AI
+          </button>
+          <button
+            onClick={() => openModal("video", "/videos/model_video.mp4")}
+            className="relative overflow-hidden px-6 py-3 rounded-full bg-gradient-to-r from-gray-900 via-gray-800 to-gray-700 text-white text-sm font-medium shadow-md transition-all duration-300 hover:scale-105 hover:shadow-lg"
+          >
+            💫 Zobacz Fashion Video AI
+          </button>
+        </div>
+
+        {/* Galeria */}
         <div className="grid md:grid-cols-3 gap-6">
           {portfolioItems.map((item, index) => (
             <article key={index} className="bg-white rounded-2xl shadow overflow-hidden">
               <div className="w-full aspect-square overflow-hidden">
-  <img
-    src={item.imgSrc}
-    alt={item.title}
-    className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-  />
-</div>
+                <img
+                  src={item.imgSrc}
+                  alt={item.title}
+                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                />
+              </div>
               <div className="p-4">
                 <h4 className="font-semibold">{item.title}</h4>
-                <p className="text-sm text-gray-600 mt-2">{item.description}</p>
 
                 <details className="bg-gray-50 p-2 rounded mt-2">
                   <summary className="cursor-pointer font-medium text-sm">Prompty</summary>
                   <div className="mt-1 text-xs text-gray-700 whitespace-pre-line overflow-y-auto max-h-40">
                     <strong>Prompt:</strong> {item.prompt}{"\n\n"}
-                    {item.negativePrompt && <><strong>Negative prompt:</strong> {item.negativePrompt}</>}
+                    {item.negativePrompt && (
+                      <>
+                        <strong>Negative prompt:</strong> {item.negativePrompt}
+                      </>
+                    )}
                   </div>
                 </details>
 
@@ -493,6 +497,7 @@ function PortfolioSection() {
             </article>
           ))}
         </div>
+      </div>
 
       {/* Modal */}
       {modalContent && (
@@ -518,7 +523,6 @@ function PortfolioSection() {
     </section>
   );
 }
-
 
 /* Contact */
 function Contact() {
