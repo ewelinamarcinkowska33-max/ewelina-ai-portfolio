@@ -369,41 +369,36 @@ Comical Epic Orchestral Miniature, Majestic and Exaggeratedly Lighthearted, evok
   </div>
 )}
 
-/* WinterGlowCase */
+import React from "react";
+
 function WinterGlowCase() {
-  const [open, setOpen] = React.useState(false)
+  const [open, setOpen] = React.useState(false);
 
   const projects = [
     { 
       title: 'Gold Elegance', 
       image: '/images/winterglow-1.png', 
-      prompt: 'A festive winter fashion photo shoot indoors, featuring a minimalist Christmas setting: a white room with subtle golden decor, christmas tree, candles, and soft fairy lights. The model wears a shimmering gold satin dress and holds a cup of coffee. Cozy yet elegant atmosphere, magazine-style composition.', 
-      description: 'Złoto i ciepło w najczystszej formie.', 
-      tools: ['Gemini Imagen', 'AI Canvas'] 
+      description: 'Złoto i ciepło w najczystszej formie.' 
     },
     { 
       title: 'Velvet Night Look', 
       image: '/images/winterglow-2.png', 
-      prompt: 'A high-end fashion photo of a female model standing in softly falling snow. She wears a beige oversized wool coat, a white turtleneck, and silver accessories. The background is blurred city lights and gentle snowflakes. Cinematic lighting, editorial photography, 85mm lens, warm tones, soft bokeh.', 
-      description: 'Zimowy wieczór w aksamicie i blasku.', 
-      tools: ['Gemini Imagen', 'DALL·E 3'] 
+      description: 'Zimowy wieczór w aksamicie i blasku.' 
     },
     { 
       title: 'Matching Moments', 
       image: '/images/winterglow-3.png', 
-      prompt: 'A realistic photo inside a cozy Christmas room. A man and a woman in matching festive pajamas smile and exchange a beautifully wrapped present near a glowing Christmas tree. Realistic lighting, festive, emotional style.', 
-      description: 'Ciepło zaczyna się od drobnych gestów.', 
-      tools: ['Gemini Imagen', 'DALL·E 3'] 
+      description: 'Ciepło zaczyna się od drobnych gestów.' 
     },
-  ]
+  ];
 
   return (
     <section className="py-16 px-6 md:px-20 bg-gradient-to-b from-white via-gray-50 to-rose-50">
       <div className="max-w-6xl mx-auto">
-        <div className="flex items-center gap-3 mb-6">
-          <div className="text-amber-500 font-semibold">✦</div>
-          <h2 className="text-3xl font-bold">Winter Glow — AI Holiday Fashion Campaign</h2>
-        </div>
+        <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
+          <span className="text-amber-500 font-semibold">✦</span>
+          Winter Glow — AI Holiday Fashion Campaign
+        </h2>
 
         <p className="text-gray-600 max-w-3xl mb-8">
           Mini kampania inspirowana świątecznym ciepłem i estetyką LPP. 
@@ -412,44 +407,36 @@ function WinterGlowCase() {
 
         <div className="grid md:grid-cols-3 gap-6">
           {projects.map((p, i) => (
-            <article 
-              key={i}
-              className="bg-white rounded-2xl shadow overflow-hidden transform transition-transform duration-300 hover:scale-105"
-            >
+            <div key={i} className="bg-white rounded-2xl shadow hover:scale-105 transition overflow-hidden">
               <img src={p.image} alt={p.title} className="w-full h-64 object-cover" />
               <div className="p-4">
                 <h3 className="font-semibold">{p.title}</h3>
                 <p className="text-sm text-gray-600 italic mt-2">{p.description}</p>
-                <details className="mt-3 bg-gray-100 p-3 rounded text-sm">
-                  <summary className="cursor-pointer font-medium">Prompt & tools</summary>
-                  <div className="mt-2 font-mono text-xs text-gray-700 whitespace-pre-line">{p.prompt}</div>
-                  <div className="mt-3 flex gap-2 flex-wrap">
-                    {p.tools.map((t) => (
-                      <span key={t} className="text-xs bg-rose-100 text-rose-700 px-2 py-1 rounded-full">#{t}</span>
-                    ))}
-                  </div>
-                </details>
               </div>
-            </article>
+            </div>
           ))}
 
           {/* Kafelek z video */}
-          <article 
+          <div 
             onClick={() => setOpen(true)}
-            className="relative cursor-pointer bg-black rounded-2xl shadow overflow-hidden group transform transition-transform duration-300 hover:scale-105"
+            className="relative cursor-pointer bg-black rounded-2xl shadow overflow-hidden hover:scale-105 transition group"
           >
-            <img src="/images/winterglow-video-poster.jpg" alt="Winter Glow Video" className="w-full h-64 object-cover opacity-80 group-hover:opacity-60 transition" />
+            <img 
+              src="/images/winterglow-video-poster.jpg" 
+              alt="Winter Glow Video" 
+              className="w-full h-64 object-cover opacity-80 group-hover:opacity-60 transition" 
+            />
             <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
               <svg xmlns="http://www.w3.org/2000/svg" className="w-12 h-12 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-5.197-3.03A1 1 0 008 9.03v5.94a1 1 0 001.555.832l5.197-3.03a1 1 0 000-1.664z" />
               </svg>
               <span className="text-sm font-semibold tracking-wide">Zobacz video</span>
             </div>
-          </article>
+          </div>
         </div>
       </div>
 
-      {/* Modal z video */}
+      {/* Modal video */}
       {open && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-6">
           <div className="absolute inset-0 bg-black/60" onClick={() => setOpen(false)} />
@@ -463,7 +450,6 @@ function WinterGlowCase() {
                 Zamknij ✕
               </button>
             </div>
-
             <div className="bg-black">
               <video controls autoPlay className="w-full h-auto rounded-b-2xl">
                 <source src="/videos/winter_glow_video.mp4" type="video/mp4" />
@@ -474,9 +460,10 @@ function WinterGlowCase() {
         </div>
       )}
     </section>
-  )
+  );
 }
 
+export default WinterGlowCase;
 
 /* PortfolioSection */
 function PortfolioSection() {
