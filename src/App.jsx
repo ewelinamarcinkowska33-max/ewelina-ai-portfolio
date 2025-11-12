@@ -368,66 +368,139 @@ Comical Epic Orchestral Miniature, Majestic and Exaggeratedly Lighthearted, evok
 
 /* PortfolioSection */
 function PortfolioSection() {
+  const [modalContent, setModalContent] = React.useState(null);
+
+  const openModal = (type, src) => {
+    let content;
+    if (type === "image") {
+      content = <img src={src} alt="Portfolio" className="max-w-full rounded" />;
+    } else if (type === "video") {
+      content = (
+        <video controls className="max-w-full rounded">
+          <source src={src} type="video/mp4" />
+        </video>
+      );
+    }
+    setModalContent(content);
+  };
+
+  const closeModal = () => setModalContent(null);
+
+  const portfolioItems = [
+    {
+      title: "Streetwear",
+      description: "Studio photo of a young male model in trendy streetwear — oversized hoodie, denim, sneakers. Plain white background, flat e-commerce lighting, front view. Outfit clearly visible, natural pose.",
+      prompt: `Studio photo of a young male model in trendy streetwear — oversized hoodie, denim, sneakers. Plain white or light grey background, flat e-commerce lighting, front view. Outfit clearly visible, natural pose, realistic texture and color. High-resolution catalog photo, clean and modern.`,
+      negativePrompt: `no graffiti, no street background, no blur, no text, no props, no neon colors unless on clothing.`,
+      imgSrc: "/images/collage1.png"
+    },
+    {
+      title: "Men’s Fashion",
+      description: "Professional e-commerce photo of a male model in a casual smart outfit — shirt, chinos, or minimalist jacket. White background, uniform lighting, full-body or mid-length framing.",
+      prompt: `A professional e-commerce fashion photo of a male model. Model standing naturally, wearing casual smart outfit — shirt, chinos, or minimalist jacket. White seamless background, uniform lighting, full-body or mid-length framing. Clean neutral color palette (grey, navy, beige). Sharp focus on clothing details, modern premium look.`,
+      negativePrompt: `no logos, no text, no dramatic lighting, no background, no shadows on wall, no unrealistic body shapes.`,
+      imgSrc: "/images/collage2.png"
+    },
+    {
+      title: "Women’s Fashion",
+      description: "Professional studio photo of a female model wearing elegant minimalist clothing. White background, even soft lighting, full-body shot.",
+      prompt: `A professional studio photo of a female model wearing elegant minimalist clothing. White seamless background, even soft lighting, full-body shot. Neutral color palette (beige, cream, taupe, black, white). Focus on garment fit, fabric texture, and natural posture. Clean, realistic proportions, subtle shadow under feet only. Premium e-commerce photo, editorial-level quality.`,
+      negativePrompt: `no text, no props, no accessories, no hair wind, no background, no blur, no exaggerated expressions.`,
+      imgSrc: "/images/collage3.png"
+    },
+    {
+      title: "Soft Babywear Lookbook",
+      description: "Professional horizontal photo for LPP babywear collection. Soft natural light, cozy neutral background, cute babies wearing minimalist clothes.",
+      prompt: `A professional horizontal photo for LPP babywear collection. Soft natural light, cozy neutral background (warm beige or off-white). Cute babies and toddlers wearing minimalist, comfortable clothes — cotton, linen, knitwear in soft pastel tones (cream, dusty pink, light grey, sage). Calm, tender atmosphere, natural poses, focus on fabric texture and gentle color harmony. Premium lookbook style, modern Scandinavian minimalism, editorial quality.`,
+      negativePrompt: `no text, no logos, no cluttered background, no harsh shadows, no unrealistic proportions, no synthetic colors.`,
+      imgSrc: "/images/collage4.png"
+    },
+    {
+      title: "Creative Street Energy",
+      description: "Horizontal youth fashion editorial photo. Young people in trendy streetwear, urban background, dynamic poses.",
+      prompt: `A horizontal youth fashion editorial photo. A group of young people in trendy streetwear: oversized hoodies, denim, sneakers, cargo pants. Urban background with graffiti, skatepark or city walls. Natural daylight, dynamic poses, candid energy, creative color grading. Modern Gen Z style, high-quality fashion photography, authentic street vibe.`,
+      negativePrompt: `no logos, no text, no blur, no overexposure, no unrealistic faces.`,
+      imgSrc: "/images/collage5.png",
+      videoSrc: "/videos/street_energy.mp4" // przycisk wideo
+    },
+    {
+      title: "Monochrome Identity",
+      description: "Fashion photo in a monochrome beige palette. Minimalist outfits, soft lighting, elegant composition.",
+      prompt: `Fashion photo in a monochrome beige palette. Models wear different shades of the same color, minimalist outfits with rich textures (wool, silk, linen). Soft lighting, neutral background, focus on fabric structure and silhouette. Elegant, luxurious, calm tone.`,
+      negativePrompt: ``,
+      imgSrc: "/images/collage6.png"
+    },
+    {
+      title: "Studio Harmony",
+      description: "Professional studio fashion shot. Three models in minimalist clothing, calm, timeless, harmonious look.",
+      prompt: `A professional studio fashion shot. Three models styled in minimalist clothing, soft neutral colors (beige, cream, taupe). Simple clean studio background, soft diffused lighting, elegant composition. Calm, timeless, and harmonious look. Premium editorial mood, elegant minimalism aesthetic.`,
+      negativePrompt: ``,
+      imgSrc: "/images/collage7.png",
+    }
+  ];
+
   return (
     <section className="py-16 px-6 md:px-20 bg-[#F9F8F6]">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-serif mb-8">Portfolio & Experiments</h2>
-        <p className="text-gray-600 mb-6">Zestaw eksperymentów, kolaży i testów promptów — pokażemy tu proces twórczy i różne wariacje tworzone z AI.</p>
+        <p className="text-gray-600 mb-6">
+          Zestaw eksperymentów, zdjęć i testów promptów — proces twórczy i różne wariacje tworzone z AI.
+        </p>
         <div className="grid md:grid-cols-3 gap-6">
-          <article className="bg-white rounded-2xl shadow overflow-hidden">
-            <img src="/images/collage1.png" alt="collage" className="w-full h-64 object-cover" />
-            <div className="p-4">
-              <h4 className="font-semibold">Creative Collage</h4>
-              <p className="text-sm text-gray-600 mt-2">Kompozycje tworzone w Affinity Designer z elementami generatywnymi.</p>
-            </div>
-          </article>
-           <article className="bg-white rounded-2xl shadow overflow-hidden">
-            <img src="/images/collage2.png" alt="collage" className="w-full h-64 object-cover" />
-            <div className="p-4">
-              <h4 className="font-semibold">Creative Collage</h4>
-              <p className="text-sm text-gray-600 mt-2">Kompozycje tworzone w Affinity Designer z elementami generatywnymi.</p>
-            </div>
-          </article>
-           <article className="bg-white rounded-2xl shadow overflow-hidden">
-            <img src="/images/collage3.png" alt="collage" className="w-full h-64 object-cover" />
-            <div className="p-4">
-              <h4 className="font-semibold">Creative Collage</h4>
-              <p className="text-sm text-gray-600 mt-2">Kompozycje tworzone w Affinity Designer z elementami generatywnymi.</p>
-            </div>
-          </article>
-           <article className="bg-white rounded-2xl shadow overflow-hidden">
-            <img src="/images/collage4.png" alt="collage" className="w-full h-64 object-cover" />
-            <div className="p-4">
-              <h4 className="font-semibold">Creative Collage</h4>
-              <p className="text-sm text-gray-600 mt-2">Kompozycje tworzone w Affinity Designer z elementami generatywnymi.</p>
-            </div>
-          </article>
-           <article className="bg-white rounded-2xl shadow overflow-hidden">
-            <img src="/images/collage5.png" alt="collage" className="w-full h-64 object-cover" />
-            <div className="p-4">
-              <h4 className="font-semibold">Creative Collage</h4>
-              <p className="text-sm text-gray-600 mt-2">Kompozycje tworzone w Affinity Designer z elementami generatywnymi.</p>
-            </div>
-          </article>
-          <article className="bg-white rounded-2xl shadow overflow-hidden">
-            <img src="/images/collage6.png" alt="collage2" className="w-full h-64 object-cover" />
-            <div className="p-4">
-              <h4 className="font-semibold">Experimental Portraits</h4>
-              <p className="text-sm text-gray-600 mt-2">Testy postaci i stylów — od fotorealizmu po artystyczne glitche.</p>
-            </div>
-          </article>
-          <article className="bg-white rounded-2xl shadow overflow-hidden">
-            <img src="/images/collage7.png" alt="collage3" className="w-full h-64 object-cover" />
-            <div className="p-4">
-              <h4 className="font-semibold">Product Details</h4>
-              <p className="text-sm text-gray-600 mt-2">Detale tkanin i akcesoriów — gotowe do sklepowych mockupów.</p>
-            </div>
-          </article>
+          {portfolioItems.map((item, index) => (
+            <article key={index} className="bg-white rounded-2xl shadow overflow-hidden">
+              <img src={item.imgSrc} alt={item.title} className="w-full h-64 object-cover" />
+              <div className="p-4">
+                <h4 className="font-semibold">{item.title}</h4>
+                <p className="text-sm text-gray-600 mt-2">{item.description}</p>
+
+                <details className="bg-gray-50 p-2 rounded mt-2">
+                  <summary className="cursor-pointer font-medium text-sm">Prompty</summary>
+                  <div className="mt-1 text-xs text-gray-700 whitespace-pre-line overflow-y-auto max-h-40">
+                    <strong>Prompt:</strong> {item.prompt}{"\n\n"}
+                    {item.negativePrompt && <><strong>Negative prompt:</strong> {item.negativePrompt}</>}
+                  </div>
+                </details>
+
+                {item.videoSrc && (
+                  <button
+                    onClick={() => openModal("video", item.videoSrc)}
+                    className="mt-2 px-3 py-1 bg-green-600 text-white rounded hover:bg-green-700 text-sm transition"
+                  >
+                    Zobacz wideo
+                  </button>
+                )}
+              </div>
+            </article>
+          ))}
         </div>
       </div>
+
+      {/* Modal */}
+      {modalContent && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-6"
+          onClick={closeModal}
+        >
+          <div className="absolute inset-0 bg-black/60" />
+          <div
+            className="relative bg-white rounded-2xl max-w-3xl w-full overflow-hidden shadow-2xl p-4"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={closeModal}
+              className="absolute top-2 right-2 text-red-600 font-bold px-2 py-1 rounded hover:bg-red-100 transition"
+            >
+              Zamknij ✕
+            </button>
+            <div>{modalContent}</div>
+          </div>
+        </div>
+      )}
     </section>
-  )
+  );
 }
+
 
 /* Contact */
 function Contact() {
