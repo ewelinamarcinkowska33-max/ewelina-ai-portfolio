@@ -474,6 +474,23 @@ function PortfolioSection() {
         </div>
       </div>
 
+      {/* Przyciski wideo */}
+        <div className="mt-12 flex flex-col md:flex-row items-center justify-center gap-4">
+          <button
+            onClick={() => openModal("video", "/videos/winter_video.mp4")}
+            className="px-6 py-3 bg-black text-white rounded-full hover:bg-gray-800 transition"
+          >
+            Zobacz Winter Video AI
+          </button>
+          <button
+            onClick={() => openModal("video", "/videos/model_video.mp4")}
+            className="px-6 py-3 bg-black text-white rounded-full hover:bg-gray-800 transition"
+          >
+            Zobacz Fashion Video AI
+          </button>
+        </div>
+      </div>
+    
       {/* Modal */}
       {modalContent && (
         <div
