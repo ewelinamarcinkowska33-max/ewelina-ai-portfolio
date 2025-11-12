@@ -566,7 +566,6 @@ function Contact() {
   )
 }
 
-
 /* Footer */
 function Footer() {
   return (
