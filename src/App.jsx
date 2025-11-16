@@ -527,19 +527,7 @@ function PortfolioSection() {
 
 /* RecruitmentTaskSection */
 function RecruitmentTaskSection() {
-  const [modalContent, setModalContent] = React.useState(null);
-
-  const openModal = (src) => {
-    setModalContent(
-      <video controls className="max-w-full rounded">
-        <source src={src} type="video/mp4" />
-      </video>
-    );
-  };
-
-  const closeModal = () => setModalContent(null);
-
-  const images = [
+ const images = [
     {
       title: "Hero Shot — South Kensington",
       prompt: `Use the attached model photos as the only face and body reference. Keep her appearance fully consistent across all images. A realistic London street fashion editorial photo featuring the same female model from the reference images. Full-body shot in front of a classic South Kensington townhouse, soft natural overcast light, neutral colors, modern aspirational aesthetic, 50mm lens look, cinematic composition, background in sharp focus, no blur. Maintain her face, hairstyle, outfit, and overall styling fully consistent with the reference images. Ultra-detailed textures, natural skin, subtle movement, natural pose. Preserve outfit color, fit, and style exactly as in the reference photos.`,
@@ -600,7 +588,7 @@ Do not change the model’s pose, stride, arm movement, or outfit. Reproduce her
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-serif mb-6 text-center">Zadanie Rekrutacyjne — London Fashion Day</h2>
         <p className="text-gray-600 mb-10 text-center">
-          Dokumentacja sesji zdjęciowej w Londynie — 7 scen z modelką, prompty i video podsumowujące dzień.
+          Dokumentacja sesji zdjęciowej w Londynie — 7 scen z modelką, prompty i opis workflow.
         </p>
 
         {/* Galeria */}
@@ -625,14 +613,8 @@ Do not change the model’s pose, stride, arm movement, or outfit. Reproduce her
           ))}
         </div>
 
-        {/* Przyciski video i workflow */}
+        {/* Przyciski workflow */}
         <div className="flex flex-wrap justify-center gap-6">
-          <button
-            onClick={() => openModal("/videos/london_day.mp4")}
-            className="px-6 py-3 rounded-full bg-blue-600 text-white font-medium shadow hover:bg-blue-700 transition"
-          >
-            🎬 Zobacz video sesji
-          </button>
           <a
             href="/docs/workflow_london.docx"
             download
@@ -641,34 +623,10 @@ Do not change the model’s pose, stride, arm movement, or outfit. Reproduce her
             📄 Pobierz opis workflow
           </a>
         </div>
-
       </div>
-
-      {/* Modal */}
-      {modalContent && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-6"
-          onClick={closeModal}
-        >
-          <div className="absolute inset-0 bg-black/60" />
-          <div
-            className="relative bg-white rounded-2xl max-w-3xl w-full overflow-hidden shadow-2xl p-4"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              onClick={closeModal}
-              className="absolute top-2 right-2 text-red-600 font-bold px-2 py-1 rounded hover:bg-red-100 transition"
-            >
-              Zamknij ✕
-            </button>
-            <div>{modalContent}</div>
-          </div>
-        </div>
-      )}
     </section>
   );
 }
-
 
 /* Contact */
 function Contact() {
