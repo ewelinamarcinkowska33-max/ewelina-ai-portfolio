@@ -13,6 +13,7 @@ export default function App() {
         <CvSection />
         <AideasCaseStudy />
         <PortfolioSection />
+        <RecruitmentTaskSection />
         <Contact />
       </main>
       <Footer />
@@ -523,6 +524,151 @@ function PortfolioSection() {
     </section>
   );
 }
+
+/* RecruitmentTaskSection */
+function RecruitmentTaskSection() {
+  const [modalContent, setModalContent] = React.useState(null);
+
+  const openModal = (src) => {
+    setModalContent(
+      <video controls className="max-w-full rounded">
+        <source src={src} type="video/mp4" />
+      </video>
+    );
+  };
+
+  const closeModal = () => setModalContent(null);
+
+  const images = [
+    {
+      title: "Hero Shot — South Kensington",
+      prompt: `Use the attached model photos as the only face and body reference. Keep her appearance fully consistent across all images. A realistic London street fashion editorial photo featuring the same female model from the reference images. Full-body shot in front of a classic South Kensington townhouse, soft natural overcast light, neutral colors, modern aspirational aesthetic, 50mm lens look, cinematic composition, background in sharp focus, no blur. Maintain her face, hairstyle, outfit, and overall styling fully consistent with the reference images. Ultra-detailed textures, natural skin, subtle movement, natural pose. Preserve outfit color, fit, and style exactly as in the reference photos.`,
+      imgSrc: "/images/hero_shot.png"
+    },
+    {
+      title: "Close-up — Covent Garden",
+      prompt: `Use the attached model photo as the only face and body reference.
+You must preserve her appearance 100% exactly: identical facial features, skin texture, proportions, hairstyle, hairline, makeup, expression, gaze direction, pose, posture, body proportions, outfit, and colors.
+Do not modify her face or body in any way. Do not alter her pose. Do not rotate, tilt, or warp the face.
+Generate a realistic fashion editorial photo featuring the same female model exactly as in the reference image, but with the background changed to a Covent Garden archways in London.
+Soft overcast natural daylight, neutral tones, elegant London atmosphere, clean architectural details, cinematic realism, ultra-detailed textures.
+Model remains completely unchanged; ONLY the background is replaced with a realistic South Kensington street scene.
+No blur, no stylization, no lighting changes on the model.
+Extra emphasis:
+Do not change the model’s face, body, pose, or outfit. Change ONLY the background to a South Kensington townhouse street.`,
+      imgSrc: "/images/close_up.png"
+    },
+    {
+      title: "Walking shot — Notting Hill",
+      prompt: `Use the attached model photo as the only face and body reference.
+You must preserve her appearance 100% exactly: identical facial features, skin texture, hairstyle, proportions, expression, gaze direction, body shape, outfit, color, fabric, fit, and all details.
+Do not modify her face, body, posture, or pose in any way.
+Use the exact same pose, leg position, stride, arm position, hand placement, and body angle as in the reference image.
+No rotation, tilt, or deformation is allowed.
+Generate a realistic London street fashion editorial image featuring the same female model exactly as she appears in the reference photo, but walking along a Notting Hill sidewalk.
+Soft natural daylight, neutral tones, cinematic 50mm look, ultra-detailed textures, realistic city depth.
+Only the background and environment change — the model, her pose, and her outfit must remain identical to the reference.
+No blur or stylization; keep natural skin and consistent lighting on the model.
+Extra emphasis:
+Do not change the model’s pose, stride, arm movement, or outfit. Reproduce her body and face with 100% accuracy. Change ONLY the background to a Notting Hill sidewalk.`,
+      imgSrc: "/images/walking_shot.png"
+    },
+    {
+      title: "Lifestyle moment — Café Window",
+      prompt: `Use the attached model photos as the only face and body reference. Keep her appearance fully consistent across all images. A realistic London street fashion editorial photo featuring the same female model from the reference images. Model standing or leaning near a café window, casually drinking coffee, subtle reflection in the glass, natural pose, calm and elegant lifestyle moment. Soft daylight, neutral tones, 50mm lens look, cinematic composition, ultra-detailed textures, natural skin. Maintain her face, hairstyle, outfit, and overall styling fully consistent with the reference images. Preserve outfit color, fit, and style exactly as in the reference photos.`,
+      imgSrc: "/images/lifestyle_moment.png"
+    },
+    {
+      title: "Sitting shot — Stairs / Red Phone Booth",
+      prompt: `Use the attached model photos as the only face and body reference. Keep her appearance fully consistent across all images. A realistic London street fashion editorial photo featuring the same female model from the reference images. Model sitting on stairs of a townhouse, near a red phone booth, calm luxury mood, very fashion-forward pose, relaxed yet elegant posture. Soft daylight, neutral tones, 50mm lens look, cinematic composition, ultra-detailed textures, natural skin. Maintain her face, hairstyle, outfit, and overall styling fully consistent with the reference images. Preserve outfit color, fit, and style exactly as in the reference photos.`,
+      imgSrc: "/images/sitting_shot.png"
+    },
+    {
+      title: "Final frame — Tower Bridge at night",
+      prompt: `Use the attached model photos as the only face and body reference. Keep her appearance fully consistent across all images. The photo is taken from behind, showing part of the model's profile as she walks across Tower Bridge at night, with a cinematic perspective emphasizing the end of the day. Maintain her face, hairstyle, outfit, and overall styling fully consistent with the reference images. Neutral tones adapted to night lighting, 50mm lens look, ultra-detailed textures, natural skin, modern street-fashion editorial aesthetic. Preserve outfit color, fit, and style exactly as in the reference photos.`,
+      imgSrc: "/images/final_frame.png"
+    },
+    {
+      title: "Bonus Scene — Leadenhall Market",
+      prompt: `Use the attached model photos as the only face and body reference. Keep her appearance fully consistent across all images. A realistic London street fashion editorial photo featuring the same female model from the reference images. She is standing in Leadenhall Market, wearing the same coat as in the reference photos, now accessorized with a lightweight scarf draped over her shoulders and a small, elegant handbag. Neutral tones, soft natural daylight, modern aspirational aesthetic, 50mm lens look, cinematic composition. Ultra-detailed textures, natural skin, subtle natural pose. Preserve outfit color, fit, and style exactly as in the reference photos. Model’s face, hairstyle, and expression remain fully consistent. Background shows iconic covered market architecture, colorful shop fronts, and subtle urban activity, but model remains the focus. Extra emphasis: Scarf and handbag integrated naturally, not overpowering the outfit. Maintain identical facial features, hairstyle, and posture as reference. Lighting, color palette, and cinematic composition consistent with previous scenes.`,
+      imgSrc: "/images/bonus_scene.png"
+    }
+  ];
+
+  return (
+    <section id="recruitment-task" className="py-16 px-6 md:px-20 bg-white">
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-3xl md:text-4xl font-serif mb-6 text-center">Zadanie Rekrutacyjne — London Fashion Day</h2>
+        <p className="text-gray-600 mb-10 text-center">
+          Dokumentacja sesji zdjęciowej w Londynie — 7 scen z modelką, prompty i video podsumowujące dzień.
+        </p>
+
+        {/* Galeria */}
+        <div className="grid md:grid-cols-3 gap-6 mb-10">
+          {images.map((item, index) => (
+            <article key={index} className="bg-gray-50 rounded-2xl shadow overflow-hidden p-4">
+              <div className="w-full aspect-[2/3] overflow-hidden rounded-2xl mb-4">
+                <img
+                  src={item.imgSrc}
+                  alt={item.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h4 className="font-semibold mb-2">{item.title}</h4>
+              <details className="bg-white p-2 rounded text-xs text-gray-700">
+                <summary className="cursor-pointer font-medium">Prompt</summary>
+                <div className="mt-1 whitespace-pre-line max-h-40 overflow-y-auto">
+                  {item.prompt}
+                </div>
+              </details>
+            </article>
+          ))}
+        </div>
+
+        {/* Przyciski video i workflow */}
+        <div className="flex flex-wrap justify-center gap-6">
+          <button
+            onClick={() => openModal("/videos/london_day.mp4")}
+            className="px-6 py-3 rounded-full bg-blue-600 text-white font-medium shadow hover:bg-blue-700 transition"
+          >
+            🎬 Zobacz video sesji
+          </button>
+          <a
+            href="/docs/workflow_london.docx"
+            download
+            className="px-6 py-3 rounded-full bg-gray-600 text-white font-medium shadow hover:bg-gray-700 transition"
+          >
+            📄 Pobierz opis workflow
+          </a>
+        </div>
+
+      </div>
+
+      {/* Modal */}
+      {modalContent && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-6"
+          onClick={closeModal}
+        >
+          <div className="absolute inset-0 bg-black/60" />
+          <div
+            className="relative bg-white rounded-2xl max-w-3xl w-full overflow-hidden shadow-2xl p-4"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={closeModal}
+              className="absolute top-2 right-2 text-red-600 font-bold px-2 py-1 rounded hover:bg-red-100 transition"
+            >
+              Zamknij ✕
+            </button>
+            <div>{modalContent}</div>
+          </div>
+        </div>
+      )}
+    </section>
+  );
+}
+
 
 /* Contact */
 function Contact() {
