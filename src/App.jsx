@@ -253,7 +253,7 @@ function AideasCaseStudy() {
         <div className="grid md:grid-cols-2 gap-8 items-start">
           <div>
             <p className="text-gray-700 mb-4">
-              Projekt stworzony w ramach eksperymentu AI — od obrazu do wideo i dźwięku. Narzędzia: Gemini 2.5 (Canvas), Hailuo AI, Stable Audio.
+              Projekt stworzony w ramach eksperymentu AIDEAS — od obrazu do wideo i dźwięku. Narzędzia: Gemini 2.5 (Canvas), Hailuo AI, Stable Audio.
             </p>
 
             {/* Prompty w detalach */}
